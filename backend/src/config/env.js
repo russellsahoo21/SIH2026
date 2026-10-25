@@ -1,15 +1,23 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load .env from process cwd, backend/.env, and root project directory
 dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 const envSchema = z.object({
   PORT: z.coerce.number().default(4000),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
-  DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
+  DATABASE_URL: z.string().default(process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/aicte_db'),
   DATABASE_URL_POOLED: z.string().optional(),
   UPLOAD_DIR: z.string().default('./uploads'),
-  JWT_SECRET: z.string().min(8, 'JWT_SECRET must be at least 8 characters'),
+  JWT_SECRET: z.string().min(8, 'JWT_SECRET must be at least 8 characters').default('change-me-to-a-long-random-string-at-least-32-chars'),
   JWT_EXPIRES_IN: z.string().default('8h'),
   CORS_ORIGIN: z.string().default('http://localhost:5173')
 });

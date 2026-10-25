@@ -1,0 +1,18 @@
+{
+  "id": "e2f0a123-5678-4abc-9def-0123456789ab",
+  "name": "Local Development",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "testInstId",
+      "value": "2",
+      "type": "default",
+      "enabled": true
+    }
+  ]
+}

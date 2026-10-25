@@ -12,6 +12,12 @@ import bureausRoutes from './modules/bureaus/bureaus.routes.js';
 import usersRoutes from './modules/users/users.routes.js';
 import casesRoutes from './modules/cases/cases.routes.js';
 
+// Route modules owned by Dev B
+import institutionsRoutes from './modules/institutions/institutions.routes.js';
+import suggestRoutes from './modules/matching/matching.routes.js';
+import categoriesRoutes from './modules/matching/categories.routes.js';
+import overlapsRoutes from './modules/overlaps/overlaps.routes.js';
+
 // Route modules owned by Dev C
 import slaRoutes from './modules/sla/sla.routes.js';
 import dashboardRoutes from './modules/dashboard/dashboard.routes.js';
@@ -42,13 +48,19 @@ export function createApp() {
     });
   });
 
-  // Base API routes
+  // Base API routes (Dev A)
   app.use('/api/auth', authRoutes);
   app.use('/api/bureaus', bureausRoutes);
   app.use('/api/users', usersRoutes);
   app.use('/api/cases', casesRoutes);
 
-  // Dev C Analytics, SLA, Reports & Imports API routes
+  // Base API routes (Dev B)
+  app.use('/api/institutions', institutionsRoutes);
+  app.use('/api/suggest', suggestRoutes);
+  app.use('/api/categories', categoriesRoutes);
+  app.use('/api/overlaps', overlapsRoutes);
+
+  // Analytics, SLA, Reports & Imports API routes (Dev C)
   app.use('/api/sla-config', slaRoutes);
   app.use('/api/dashboard', dashboardRoutes);
   app.use('/api/reports', reportsRoutes);
