@@ -1,0 +1,511 @@
+{
+  "info": {
+    "name": "SIH 2026 AICTE Complaint System - Automated API Tests",
+    "_postman_id": "c1f7a268-3d2b-4d42-8947-8a8f5b820a91",
+    "description": "Comprehensive Postman test suite covering all Dev A & Dev B endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response envelope has status ok', function () {",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.data.status).to.eql('ok');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02. Bureaus List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/bureaus",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "bureaus"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Returns list of active bureaus', function () {",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.data).to.be.an('array');",
+              "  pm.expect(json.data.length).to.be.at.least(1);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03. Categories Reference",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "categories"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Contains standard complaint categories', function () {",
+              "  var json = pm.response.json();",
+              "  pm.expect(json.data).to.be.an('array');",
+              "  var codes = json.data.map(c => c.code);",
+              "  pm.expect(codes).to.include('FEES');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04. Auth - Login Officer (RB)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"officer.rb1\",\n  \"password\": \"Demo@123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.test('Token and user returned', function () {",
+              "  pm.expect(json.data.token).to.be.a('string');",
+              "  pm.expect(json.data.user.role).to.eql('OFFICER');",
+              "  pm.expect(json.data.user.bureau).to.eql('RB');",
+              "  pm.environment.set('officerToken', json.data.token);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05. Auth - Login Admin",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Demo@123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.test('Admin token stored', function () {",
+              "  pm.expect(json.data.user.role).to.eql('ADMIN');",
+              "  pm.environment.set('adminToken', json.data.token);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06. Auth - Login Coordinator",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"coordinator\",\n  \"password\": \"Demo@123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.environment.set('coordToken', json.data.token);",
+              "pm.expect(json.data.user.role).to.eql('COORDINATOR');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07. Auth - Verify Current User (/me)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{officerToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/me",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "me"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data.username).to.eql('officer.rb1');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "08. Users - List Users (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/users?pageSize=10",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "users"],
+          "query": [{ "key": "pageSize", "value": "10" }]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data).to.be.an('array');",
+              "pm.expect(json.meta.total).to.be.above(0);",
+              "json.data.forEach(function(u) { pm.expect(u).to.not.have.property('password_hash'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "09. Institutions - Search & Normalize",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{officerToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/institutions?q=hillcrest inst tech",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "institutions"],
+          "query": [{ "key": "q", "value": "hillcrest inst tech" }]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data).to.be.an('array');",
+              "pm.expect(json.data.length).to.be.at.least(1);",
+              "pm.environment.set('testInstId', json.data[0].id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "10. Institutions - Profile by ID",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{officerToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/institutions/{{testInstId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "institutions", "{{testInstId}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data).to.have.property('name');",
+              "pm.expect(json.data).to.have.property('permanentId');",
+              "pm.expect(json.data).to.have.property('caseCounts');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "11. Matching - Suggest Category and Institution",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{officerToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"institutionName\": \"Hillcrest Inst. of Tech.\",\n  \"description\": \"Demanding high capitation fees from first year students\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/suggest",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "suggest"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data.category.suggested).to.eql('FEES');",
+              "pm.expect(json.data.institutionCandidates.length).to.be.above(0);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "12. Cases - Register Case",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{officerToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"institutionId\": {{testInstId}},\n  \"category\": \"FEES\",\n  \"sourceChannel\": \"CPGRAMS\",\n  \"receivedOn\": \"2026-10-25\",\n  \"description\": \"Excessive unauthorized fee collection for laboratory and tuition.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cases",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 201 Created', function () { pm.response.to.have.status(201); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data.case.status).to.eql('NEW');",
+              "pm.expect(json.data.case.slaState).to.be.a('string');",
+              "var encodedId = encodeURIComponent(json.data.case.id);",
+              "pm.environment.set('createdCaseId', encodedId);",
+              "pm.environment.set('caseVersion', json.data.case.version);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "13. Cases - Get Case Detail (Full Visibility)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{officerToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/cases/{{createdCaseId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases", "{{createdCaseId}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data.accessLevel).to.eql('FULL');",
+              "pm.expect(json.data.description).to.not.be.null;"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "14. Cases - Add Remark",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{officerToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"remark\": \"Notice sent to college management seeking audited receipts.\",\n  \"visibility\": \"SHARED\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cases/{{createdCaseId}}/remarks",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases", "{{createdCaseId}}", "remarks"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "15. Cases - Move Status to UNDER_PROCESS",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{officerToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"toStatus\": \"UNDER_PROCESS\",\n  \"remark\": \"Beginning formal inquiry\",\n  \"version\": {{caseVersion}}\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/cases/{{createdCaseId}}/status",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "cases", "{{createdCaseId}}", "status"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data.status).to.eql('UNDER_PROCESS');",
+              "pm.environment.set('caseVersion', json.data.version);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "16. Overlaps - List Overlap Groups (Coordinator)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{coordToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/overlaps",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "overlaps"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data).to.be.an('array');",
+              "if (json.data.length > 0) {",
+              "  pm.environment.set('testOverlapId', json.data[0].id);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "17. Overlaps - Get Overlap Details",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{coordToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/overlaps/{{testOverlapId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "overlaps", "{{testOverlapId}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "var json = pm.response.json();",
+              "pm.expect(json.data).to.have.property('institutionName');",
+              "pm.expect(json.data).to.have.property('members');",
+              "pm.expect(json.data).to.have.property('severity');"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
