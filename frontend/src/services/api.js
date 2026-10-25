@@ -1,4 +1,24 @@
-const API_BASE = '/api';
+// Target Render backend or Localhost
+const RENDER_BACKEND_URL = 'https://sih2026-17zc.onrender.com';
+
+export function getActiveBackend() {
+  return localStorage.getItem('aicte_backend_mode') || 'render'; // default to live render or 'local'
+}
+
+export function setActiveBackend(mode) {
+  localStorage.setItem('aicte_backend_mode', mode);
+}
+
+export function getApiBaseUrl() {
+  const mode = getActiveBackend();
+  if (mode === 'local') {
+    return '/api'; // routed via Vite dev proxy to http://localhost:4000
+  }
+  // If explicitly configured in VITE_API_URL, use that, else use the deployed Render URL
+  const customUrl = import.meta.env.VITE_API_URL;
+  const baseUrl = customUrl || RENDER_BACKEND_URL;
+  return `${baseUrl.replace(/\/+$/, '')}/api`;
+}
 
 export function getAuthToken() {
   return localStorage.getItem('aicte_token');
@@ -44,7 +64,8 @@ export async function apiRequest(endpoint, options = {}) {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`${API_BASE}${endpoint}`, {
+  const base = getApiBaseUrl();
+  const response = await fetch(`${base}${endpoint}`, {
     ...options,
     headers,
   });
@@ -57,6 +78,10 @@ export async function apiRequest(endpoint, options = {}) {
   }
 
   return data;
+}
+
+export function getFullApiUrl(endpoint) {
+  return `${getApiBaseUrl()}${endpoint}`;
 }
 
 // API Methods

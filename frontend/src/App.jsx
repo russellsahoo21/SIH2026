@@ -75,6 +75,9 @@ export default function App() {
           if (tab !== 'institution-profile') setSelectedInstitutionId(null);
         }}
         onLogout={handleLogout}
+        onBackendChange={() => {
+          setRefreshTrigger(prev => prev + 1);
+        }}
       />
 
       {!user ? (

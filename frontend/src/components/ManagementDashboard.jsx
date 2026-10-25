@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../services/api';
+import { api, getFullApiUrl } from '../services/api';
 import { 
   BarChart3, TrendingUp, AlertOctagon, Download, 
   MapPin, CheckCircle, Clock 
@@ -46,7 +46,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
 
   const handleExport = async () => {
     try {
-      window.open('/api/reports/bureau-wise?format=xlsx', '_blank');
+      window.open(getFullApiUrl('/reports/bureau-wise?format=xlsx'), '_blank');
     } catch (err) {
       alert('Report download initiated.');
     }

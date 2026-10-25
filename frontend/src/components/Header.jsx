@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { Landmark, Bell, User, ChevronDown, LogOut, Search, Volume2 } from 'lucide-react';
+import { getActiveBackend, setActiveBackend } from '../services/api';
 
-export default function Header({ user, onLogout, onTabChange, activeTab }) {
+export default function Header({ user, onLogout, onTabChange, activeTab, onBackendChange }) {
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [fontSize, setFontSize] = useState('normal'); // 'small', 'normal', 'large'
+  const [backendMode, setBackendMode] = useState(getActiveBackend());
+
+  const handleBackendSwitch = (mode) => {
+    setActiveBackend(mode);
+    setBackendMode(mode);
+    if (onBackendChange) onBackendChange(mode);
+  };
 
   const changeFontSize = (size) => {
     setFontSize(size);
@@ -30,6 +38,28 @@ export default function Header({ user, onLogout, onTabChange, activeTab }) {
             <button onClick={() => changeFontSize('small')} title="Decrease font size">A-</button>
             <button onClick={() => changeFontSize('normal')} title="Reset font size">A</button>
             <button onClick={() => changeFontSize('large')} title="Increase font size">A+</button>
+          </div>
+          <span style={{ color: '#CBD5E1' }}>|</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span style={{ fontSize: '11px', color: '#64748B' }}>Backend:</span>
+            <select
+              style={{
+                fontSize: '11px',
+                fontWeight: '600',
+                padding: '1px 6px',
+                borderRadius: '3px',
+                border: '1px solid #CBD5E1',
+                background: '#F8FAFC',
+                color: '#0A3663',
+                cursor: 'pointer'
+              }}
+              value={backendMode}
+              onChange={(e) => handleBackendSwitch(e.target.value)}
+              title="Switch backend target between Render and Localhost"
+            >
+              <option value="render">Render Cloud (Live)</option>
+              <option value="local">Localhost:4000</option>
+            </select>
           </div>
           <span style={{ color: '#CBD5E1' }}>|</span>
           <span className="lang-switch">English | <span style={{ cursor: 'pointer', color: '#64748B' }}>हिंदी</span></span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { api } from '../services/api';
+import { api, getFullApiUrl } from '../services/api';
 import { FileSpreadsheet, Download, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function ReportsView() {
@@ -22,7 +22,7 @@ export default function ReportsView() {
   };
 
   const handleDownloadExcel = () => {
-    window.open(`/api/reports/${reportType}?format=xlsx`, '_blank');
+    window.open(getFullApiUrl(`/reports/${reportType}?format=xlsx`), '_blank');
   };
 
   return (
