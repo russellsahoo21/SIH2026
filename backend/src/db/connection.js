@@ -4,9 +4,12 @@ import { logger } from '../config/logger.js';
 
 const { Pool } = pg;
 
+const connStr = env.DATABASE_URL || env.DATABASE_URL_POOLED;
+const isLocal = connStr.includes('localhost') || connStr.includes('127.0.0.1');
+
 export const pool = new Pool({
-  connectionString: env.DATABASE_URL || env.DATABASE_URL_POOLED,
-  ssl: {
+  connectionString: connStr,
+  ssl: isLocal ? false : {
     rejectUnauthorized: false
   },
   max: 20,
