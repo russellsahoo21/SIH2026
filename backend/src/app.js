@@ -12,6 +12,12 @@ import bureausRoutes from './modules/bureaus/bureaus.routes.js';
 import usersRoutes from './modules/users/users.routes.js';
 import casesRoutes from './modules/cases/cases.routes.js';
 
+// Route modules owned by Dev B
+import institutionsRoutes from './modules/institutions/institutions.routes.js';
+import suggestRoutes from './modules/matching/matching.routes.js';
+import categoriesRoutes from './modules/matching/categories.routes.js';
+import overlapsRoutes from './modules/overlaps/overlaps.routes.js';
+
 export function createApp() {
   const app = express();
 
@@ -36,11 +42,17 @@ export function createApp() {
     });
   });
 
-  // Base API routes
+  // Base API routes (Dev A)
   app.use('/api/auth', authRoutes);
   app.use('/api/bureaus', bureausRoutes);
   app.use('/api/users', usersRoutes);
   app.use('/api/cases', casesRoutes);
+
+  // Base API routes (Dev B)
+  app.use('/api/institutions', institutionsRoutes);
+  app.use('/api/suggest', suggestRoutes);
+  app.use('/api/categories', categoriesRoutes);
+  app.use('/api/overlaps', overlapsRoutes);
 
   // 404 & Global Error Handler
   app.use(notFound);
