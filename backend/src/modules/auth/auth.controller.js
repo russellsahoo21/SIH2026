@@ -11,6 +11,15 @@ export async function login(req, res, next) {
   }
 }
 
+export async function register(req, res, next) {
+  try {
+    const result = await authService.register(req.body);
+    return sendSuccess(res, result, undefined, 201);
+  } catch (err) {
+    next(err);
+  }
+}
+
 export async function me(req, res, next) {
   try {
     const user = await authService.getMe(req.user.id);

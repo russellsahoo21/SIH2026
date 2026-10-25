@@ -3,6 +3,55 @@ import jwt from 'jsonwebtoken';
 import { env } from '../../config/env.js';
 import { ApiError } from '../../utils/ApiError.js';
 import * as authRepo from './auth.repo.js';
+import * as usersRepo from '../users/users.repo.js';
+
+export async function register(data) {
+  if (data.username === 'system') {
+    throw new ApiError(400, 'VALIDATION_FAILED', 'Username is reserved');
+  }
+
+  const existing = await authRepo.findUserByUsername(data.username);
+  if (existing) {
+    throw new ApiError(400, 'VALIDATION_FAILED', 'Username already exists', [
+      { path: 'username', message: 'Username is taken' }
+    ]);
+  }
+
+  const passwordHash = await bcrypt.hash(data.password, 10);
+  const newUser = await usersRepo.createUser({
+    username: data.username,
+    fullName: data.fullName,
+    passwordHash,
+    role: data.role || 'OFFICER',
+    bureauCode: data.bureauCode || null,
+    region: data.region || null
+  });
+
+  const tokenPayload = {
+    sub: newUser.id,
+    id: newUser.id,
+    username: newUser.username,
+    role: newUser.role,
+    bureau: newUser.bureau,
+    region: newUser.region
+  };
+
+  const token = jwt.sign(tokenPayload, env.JWT_SECRET, {
+    expiresIn: env.JWT_EXPIRES_IN
+  });
+
+  return {
+    token,
+    user: {
+      id: newUser.id,
+      username: newUser.username,
+      fullName: newUser.fullName,
+      role: newUser.role,
+      bureau: newUser.bureau,
+      region: newUser.region
+    }
+  };
+}
 
 export async function login(username, password) {
   const user = await authRepo.findUserByUsername(username);
