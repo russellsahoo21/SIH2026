@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "permanentId": "AICTE-PID-0001",
+    "name": "Hillcrest Institute of Technology",
+    "normalizedName": "hillcrest institute of technology",
+    "address": "Sector 14, Gurugram, Haryana",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 2,
+    "permanentId": "AICTE-PID-0002",
+    "name": "Apex National Academy of Engineering",
+    "normalizedName": "apex national academy of engineering",
+    "address": "Knowledge Park III, Greater Noida, UP",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 3,
+    "permanentId": "AICTE-PID-0003",
+    "name": "Vidya Vihar College of Science and Tech",
+    "normalizedName": "vidya vihar college of science and tech",
+    "address": "Bhopal Bypass Road, Bhopal, MP",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "id": 4,
+    "permanentId": "AICTE-PID-0004",
+    "name": "Sahyadri Institute of Management and Tech",
+    "normalizedName": "sahyadri institute of management and tech",
+    "address": "Kothrud, Pune, Maharashtra",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 5,
+    "permanentId": "AICTE-PID-0005",
+    "name": "Vanguard Engineering College",
+    "normalizedName": "vanguard engineering college",
+    "address": "Electronic City, Bengaluru, Karnataka",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 6,
+    "permanentId": "AICTE-PID-0006",
+    "name": "Kalinga Technical Campus",
+    "normalizedName": "kalinga technical campus",
+    "address": "Patia, Bhubaneswar, Odisha",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 7,
+    "permanentId": "AICTE-PID-0007",
+    "name": "Aryavarta Institute of Advanced Studies",
+    "normalizedName": "aryavarta institute of advanced studies",
+    "address": "Sitapur Road, Lucknow, UP",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 8,
+    "permanentId": "AICTE-PID-0008",
+    "name": "Deccan College of Engineering and Tech",
+    "normalizedName": "deccan college of engineering and tech",
+    "address": "Gachibowli, Hyderabad, Telangana",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 9,
+    "permanentId": "AICTE-PID-0009",
+    "name": "Western Institute of Chemical Technology",
+    "normalizedName": "western institute of chemical technology",
+    "address": "Navrangpura, Ahmedabad, Gujarat",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 10,
+    "permanentId": "AICTE-PID-0010",
+    "name": "Chola Institute of Technical Studies",
+    "normalizedName": "chola institute of technical studies",
+    "address": "OMR, Chennai, Tamil Nadu",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 11,
+    "permanentId": "AICTE-PID-0011",
+    "name": "Himalayan Institute of Applied Sciences",
+    "normalizedName": "himalayan institute of applied sciences",
+    "address": "Chakrata Road, Dehradun, Uttarakhand",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 12,
+    "permanentId": "AICTE-PID-0012",
+    "name": "Zenith Business and Management Institute",
+    "normalizedName": "zenith business and management institute",
+    "address": "AB Road, Indore, MP",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "id": 13,
+    "permanentId": "AICTE-PID-0013",
+    "name": "Pragati College of Engineering",
+    "normalizedName": "pragati college of engineering",
+    "address": "Salt Lake Sector V, Kolkata, WB",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 14,
+    "permanentId": "AICTE-PID-0014",
+    "name": "Konkan Maritime and Technical Institute",
+    "normalizedName": "konkan maritime and technical institute",
+    "address": "Vashi, Navi Mumbai, Maharashtra",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 15,
+    "permanentId": "AICTE-PID-0015",
+    "name": "Coromandel Academy of Pharmacy",
+    "normalizedName": "coromandel academy of pharmacy",
+    "address": "Visakhapatnam, Andhra Pradesh",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 16,
+    "permanentId": "AICTE-PID-0016",
+    "name": "Drona College of Technology",
+    "normalizedName": "drona college of technology",
+    "address": "Sohna Road, Gurugram, Haryana",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 17,
+    "permanentId": "AICTE-PID-0017",
+    "name": "Malabar Institute of Engineering",
+    "normalizedName": "malabar institute of engineering",
+    "address": "Calicut Road, Kozhikode, Kerala",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 18,
+    "permanentId": "AICTE-PID-0018",
+    "name": "Marwar Technical University Campus",
+    "normalizedName": "marwar technical university campus",
+    "address": "Pal Road, Jodhpur, Rajasthan",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 19,
+    "permanentId": "AICTE-PID-0019",
+    "name": "Pataliputra Engineering College",
+    "normalizedName": "pataliputra engineering college",
+    "address": "Bailey Road, Patna, Bihar",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 20,
+    "permanentId": "AICTE-PID-0020",
+    "name": "Satpura Institute of Polytechnic Studies",
+    "normalizedName": "satpura institute of polytechnic studies",
+    "address": "Jabalpur Highway, Jabalpur, MP",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "id": 21,
+    "permanentId": "AICTE-PID-0021",
+    "name": "Brahmaputra Valley College of Engineering",
+    "normalizedName": "brahmaputra valley college of engineering",
+    "address": "Jalukbari, Guwahati, Assam",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 22,
+    "permanentId": "AICTE-PID-0022",
+    "name": "Aravalli Institute of Technology",
+    "normalizedName": "aravalli institute of technology",
+    "address": "Sukher, Udaipur, Rajasthan",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 23,
+    "permanentId": "AICTE-PID-0023",
+    "name": "Ganga Institute of Architecture and Design",
+    "normalizedName": "ganga institute of architecture and design",
+    "address": "Jhajjar Road, Bahadurgarh, Haryana",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 24,
+    "permanentId": "AICTE-PID-0024",
+    "name": "Mysore Academy of Technology and Management",
+    "normalizedName": "mysore academy of technology and management",
+    "address": "Hunsur Road, Mysuru, Karnataka",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 25,
+    "permanentId": "AICTE-PID-0025",
+    "name": "Narmada Institute of Science and Technology",
+    "normalizedName": "narmada institute of science and technology",
+    "address": "Zadeshwar, Bharuch, Gujarat",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 26,
+    "permanentId": "AICTE-PID-0026",
+    "name": "Shivalik College of Engineering",
+    "normalizedName": "shivalik college of engineering",
+    "address": "Shimla Bypass, Dehradun, Uttarakhand",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 27,
+    "permanentId": "AICTE-PID-0027",
+    "name": "Utkal Institute of Computer Applications",
+    "normalizedName": "utkal institute of computer applications",
+    "address": "Chandaka, Bhubaneswar, Odisha",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 28,
+    "permanentId": "AICTE-PID-0028",
+    "name": "Kaveri College of Engineering and Tech",
+    "normalizedName": "kaveri college of engineering and tech",
+    "address": "Thirumazhisai, Chennai, Tamil Nadu",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 29,
+    "permanentId": "AICTE-PID-0029",
+    "name": "Vidarbha Institute of Technology",
+    "normalizedName": "vidarbha institute of technology",
+    "address": "Umaria, Nagpur, Maharashtra",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 30,
+    "permanentId": "AICTE-PID-0030",
+    "name": "Bundelkhand Technical Academy",
+    "normalizedName": "bundelkhand technical academy",
+    "address": "Kanpur Road, Jhansi, UP",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "id": 31,
+    "permanentId": "AICTE-PID-0031",
+    "name": "Thar Institute of Engineering and Tech",
+    "normalizedName": "thar institute of engineering and tech",
+    "address": "Bikaner Highway, Bikaner, Rajasthan",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 32,
+    "permanentId": "AICTE-PID-0032",
+    "name": "Sundarbans Engineering Institute",
+    "normalizedName": "sundarbans engineering institute",
+    "address": "Baruipur, South 24 Parganas, WB",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 33,
+    "permanentId": "AICTE-PID-0033",
+    "name": "Godavari College of Engineering",
+    "normalizedName": "godavari college of engineering",
+    "address": "Rajahmundry, Andhra Pradesh",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 34,
+    "permanentId": "AICTE-PID-0034",
+    "name": "Doab Technical Institute",
+    "normalizedName": "doab technical institute",
+    "address": "GT Road, Aligarh, UP",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "id": 35,
+    "permanentId": "AICTE-PID-0035",
+    "name": "Panchvati Institute of Management",
+    "normalizedName": "panchvati institute of management",
+    "address": "Gangapur Road, Nashik, Maharashtra",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "id": 36,
+    "permanentId": "AICTE-PID-0036",
+    "name": "Nilgiri Academy of Technical Studies",
+    "normalizedName": "nilgiri academy of technical studies",
+    "address": "Coimbatore Road, Ooty, Tamil Nadu",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 37,
+    "permanentId": "AICTE-PID-0037",
+    "name": "Chotanagpur College of Engineering",
+    "normalizedName": "chotanagpur college of engineering",
+    "address": "Tatisilwai, Ranchi, Jharkhand",
+    "region": "East",
+    "active": 1
+  },
+  {
+    "id": 38,
+    "permanentId": "AICTE-PID-0038",
+    "name": "Vindhya Institute of Technology",
+    "normalizedName": "vindhya institute of technology",
+    "address": "Rewa Bypass, Satna, MP",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "id": 39,
+    "permanentId": "AICTE-PID-0039",
+    "name": "Thiruvalluvar Institute of Engineering",
+    "normalizedName": "thiruvalluvar institute of engineering",
+    "address": "Vandavasi Road, Kanchipuram, TN",
+    "region": "South",
+    "active": 1
+  },
+  {
+    "id": 40,
+    "permanentId": "AICTE-PID-0040",
+    "name": "Surya College of Engineering and Tech",
+    "normalizedName": "surya college of engineering and tech",
+    "address": "Ambala Highway, Mohali, Punjab",
+    "region": "North",
+    "active": 1
+  }
+]

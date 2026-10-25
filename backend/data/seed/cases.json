@@ -1,0 +1,2002 @@
+[
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-15",
+    "status": "UNDER_PROCESS",
+    "description": "College is demanding capitation fees of Rs 2,50,000 for B.Tech admission contrary to AICTE fee committee norms."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-19",
+    "status": "NEW",
+    "description": "Overcharging tuition and laboratory fee under the guise of developmental charges."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-07",
+    "status": "UNDER_PROCESS",
+    "description": "Institution admitted 240 students in Computer Science exceeding the approved AICTE intake of 180."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-13",
+    "status": "NEW",
+    "description": "College admitted excess candidates without state counseling quota clearance."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-30",
+    "status": "PENDING",
+    "description": "Severe shortage of qualified professors and Assistant Professors in Mechanical department."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-10",
+    "status": "UNDER_PROCESS",
+    "description": "Faculty members are being paid below 7th CPC guidelines and forced to sign blank cheques."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-15",
+    "status": "ESCALATED",
+    "description": "Lack of mandatory fire safety clearance and unapproved building construction on campus."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-23",
+    "status": "UNDER_PROCESS",
+    "description": "Laboratories and computer center lack required equipment as per AICTE Approval Process Handbook."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-17",
+    "status": "NEW",
+    "description": "Severe ragging incidents reported in first year boys hostel; Anti-Ragging Committee not active."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-21",
+    "status": "UNDER_PROCESS",
+    "description": "Hostel wardens and management failed to take prompt action on repeated ragging complaint."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-03",
+    "status": "UNDER_PROCESS",
+    "description": "Running unapproved evening shift diploma and degree programs without council sanction."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-11",
+    "status": "NEW",
+    "description": "Unapproved distance education study center operated within campus premises."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-20",
+    "status": "ESCALATED",
+    "description": "Refusal to refund caution deposit and original educational certificates of withdrawn students."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-09",
+    "status": "UNDER_PROCESS",
+    "description": "Illegal retention of original degree certificates for pending semester fees."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-10",
+    "status": "ESCALATED",
+    "description": "Ghost faculty listed during annual AICTE inspection; many faculty absent in biometric logs."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-05",
+    "status": "UNDER_PROCESS",
+    "description": "Ph.D. guides lacking mandatory credentials appointed as heads of postgraduate departments."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-10",
+    "status": "NEW",
+    "description": "Admissions conducted under management quota exceeding statutory 15% quota ceiling."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-14",
+    "status": "UNDER_PROCESS",
+    "description": "Management quota seats filled without merit list publication on college website."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-27",
+    "status": "UNDER_PROCESS",
+    "description": "Insufficient library titles and lack of subscribed mandatory IEEE/ScienceDirect journals."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-16",
+    "status": "NEW",
+    "description": "Library seating capacity is less than half of prescribed AICTE norms."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-06",
+    "status": "UNDER_PROCESS",
+    "description": "Demanding mandatory hostel and mess fees even from local day-scholar students."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-18",
+    "status": "NEW",
+    "description": "Extortionate transport fee levied on students without providing proper transit."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-04",
+    "status": "UNDER_PROCESS",
+    "description": "Misleading advertisements regarding 100% placement with fraudulent salary packages."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-12",
+    "status": "NEW",
+    "description": "Deceptive advertising of unaccredited international dual-degree programs."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-15",
+    "status": "UNDER_PROCESS",
+    "description": "Severe intimidation of junior students in off-campus private hostel managed by college."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-20",
+    "status": "NEW",
+    "description": "Physical harassment of first year students during technical symposium rehearsals."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-05",
+    "status": "ESCALATED",
+    "description": "Non-payment of faculty salaries for four consecutive months."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-25",
+    "status": "UNDER_PROCESS",
+    "description": "Unlawful termination of faculty members who raised concerns regarding salary delays."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-01",
+    "status": "UNDER_PROCESS",
+    "description": "Laboratory chemicals expired and analytical balances non-functional in pharmacology lab."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Hazardous chemical disposal procedures violated posing environmental threat on campus."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0016",
+    "institutionName": "Drona College of Technology",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-10",
+    "status": "UNDER_PROCESS",
+    "description": "Non-settlement of scholarship refund due to SC/ST students."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0017",
+    "institutionName": "Malabar Institute of Engineering",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-31",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate faculty cadre ratio in Civil Engineering department."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0018",
+    "institutionName": "Marwar Technical University Campus",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-15",
+    "status": "UNDER_PROCESS",
+    "description": "Lack of ramp and lift access for disabled students as per PwD guidelines."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0019",
+    "institutionName": "Pataliputra Engineering College",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-20",
+    "status": "UNDER_PROCESS",
+    "description": "Running unapproved supernumerary NRI seats."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0020",
+    "institutionName": "Satpura Institute of Polytechnic Studies",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Operating without mandatory NAAC/NBA accreditation declarations."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0021",
+    "institutionName": "Brahmaputra Valley College of Engineering",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-17",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to provide transcript copies for overseas higher education."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0022",
+    "institutionName": "Aravalli Institute of Technology",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-13",
+    "status": "UNDER_PROCESS",
+    "description": "Demanding Rs 50,000 extra fee for university examination hall tickets."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0023",
+    "institutionName": "Ganga Institute of Architecture and Design",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-26",
+    "status": "UNDER_PROCESS",
+    "description": "Adhoc teachers appointed without selection committee interview."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0024",
+    "institutionName": "Mysore Academy of Technology and Management",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-07",
+    "status": "UNDER_PROCESS",
+    "description": "Server room and campus intranet non-functional during online semester examinations."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0025",
+    "institutionName": "Narmada Institute of Science and Technology",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-21",
+    "status": "UNDER_PROCESS",
+    "description": "Change of college location without prior approval of AICTE."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0026",
+    "institutionName": "Shivalik College of Engineering",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-11",
+    "status": "TRANSFERRED",
+    "description": "Complaint originally lodged at RO, forwarded to PGRC for central grievance committee review."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0027",
+    "institutionName": "Utkal Institute of Computer Applications",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-13",
+    "status": "TRANSFERRED",
+    "description": "Affiliation dispute forwarded from Regional Office to Regulation Bureau for policy resolution."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0028",
+    "institutionName": "Kaveri College of Engineering and Tech",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-17",
+    "status": "TRANSFERRED",
+    "description": "Seat matrix ambiguity transferred to Approval Bureau Cell for verification."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0029",
+    "institutionName": "Vidarbha Institute of Technology",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-09",
+    "status": "TRANSFERRED",
+    "description": "Fake appointment letter issue transferred to Regional Director for on-ground inspection."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0030",
+    "institutionName": "Bundelkhand Technical Academy",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-05",
+    "status": "TRANSFERRED",
+    "description": "Land title litigation complaint transferred to Legal Cell and Regulation Bureau."
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0031",
+    "institutionName": "Thar Institute of Engineering and Tech",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #31)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0032",
+    "institutionName": "Sundarbans Engineering Institute",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-20",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #32)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0033",
+    "institutionName": "Godavari College of Engineering",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-17",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #33)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0034",
+    "institutionName": "Doab Technical Institute",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-14",
+    "status": "ESCALATED",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #34)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0035",
+    "institutionName": "Panchvati Institute of Management",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-11",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #35)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0036",
+    "institutionName": "Nilgiri Academy of Technical Studies",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #36)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0037",
+    "institutionName": "Chotanagpur College of Engineering",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-05",
+    "status": "UNDER_PROCESS",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #37)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0038",
+    "institutionName": "Vindhya Institute of Technology",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-02",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #38)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0039",
+    "institutionName": "Thiruvalluvar Institute of Engineering",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-29",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #39)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0040",
+    "institutionName": "Surya College of Engineering and Tech",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-26",
+    "status": "UNDER_PROCESS",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #40)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-23",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #41)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-20",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #42)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-17",
+    "status": "PENDING",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #43)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-14",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #44)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-11",
+    "status": "ESCALATED",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #45)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-08",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #46)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #47)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-02",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #48)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-30",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #49)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-27",
+    "status": "PENDING",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #50)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-24",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #51)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-21",
+    "status": "DISPOSED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #52)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-18",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #53)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-15",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #54)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-12",
+    "status": "DISPOSED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #55)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0016",
+    "institutionName": "Drona College of Technology",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-09",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #56)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0017",
+    "institutionName": "Malabar Institute of Engineering",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-06",
+    "status": "PENDING",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #57)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0018",
+    "institutionName": "Marwar Technical University Campus",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-03",
+    "status": "DISPOSED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #58)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0019",
+    "institutionName": "Pataliputra Engineering College",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-07-31",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #59)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0020",
+    "institutionName": "Satpura Institute of Polytechnic Studies",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-07-28",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #60)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0021",
+    "institutionName": "Brahmaputra Valley College of Engineering",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #61)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0022",
+    "institutionName": "Aravalli Institute of Technology",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-20",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #62)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0023",
+    "institutionName": "Ganga Institute of Architecture and Design",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-17",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #63)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0024",
+    "institutionName": "Mysore Academy of Technology and Management",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-14",
+    "status": "PENDING",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #64)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0025",
+    "institutionName": "Narmada Institute of Science and Technology",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-11",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #65)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0026",
+    "institutionName": "Shivalik College of Engineering",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #66)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0027",
+    "institutionName": "Utkal Institute of Computer Applications",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-05",
+    "status": "ESCALATED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #67)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0028",
+    "institutionName": "Kaveri College of Engineering and Tech",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-02",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #68)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0029",
+    "institutionName": "Vidarbha Institute of Technology",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-29",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #69)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0030",
+    "institutionName": "Bundelkhand Technical Academy",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-26",
+    "status": "UNDER_PROCESS",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #70)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0031",
+    "institutionName": "Thar Institute of Engineering and Tech",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-23",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #71)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0032",
+    "institutionName": "Sundarbans Engineering Institute",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-20",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #72)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0033",
+    "institutionName": "Godavari College of Engineering",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-17",
+    "status": "UNDER_PROCESS",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #73)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0034",
+    "institutionName": "Doab Technical Institute",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-14",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #74)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0035",
+    "institutionName": "Panchvati Institute of Management",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-11",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #75)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0036",
+    "institutionName": "Nilgiri Academy of Technical Studies",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-08",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #76)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0037",
+    "institutionName": "Chotanagpur College of Engineering",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #77)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0038",
+    "institutionName": "Vindhya Institute of Technology",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-02",
+    "status": "PENDING",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #78)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0039",
+    "institutionName": "Thiruvalluvar Institute of Engineering",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-30",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #79)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0040",
+    "institutionName": "Surya College of Engineering and Tech",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-27",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #80)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-24",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #81)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-21",
+    "status": "DISPOSED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #82)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-18",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #83)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-15",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #84)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-12",
+    "status": "DISPOSED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #85)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-09",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #86)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-06",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #87)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-03",
+    "status": "DISPOSED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #88)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-07-31",
+    "status": "ESCALATED",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #89)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-07-28",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #90)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #91)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-20",
+    "status": "PENDING",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #92)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-17",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #93)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-14",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #94)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-11",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #95)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0016",
+    "institutionName": "Drona College of Technology",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #96)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0017",
+    "institutionName": "Malabar Institute of Engineering",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-05",
+    "status": "UNDER_PROCESS",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #97)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0018",
+    "institutionName": "Marwar Technical University Campus",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-02",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #98)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0019",
+    "institutionName": "Pataliputra Engineering College",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-29",
+    "status": "PENDING",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #99)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0020",
+    "institutionName": "Satpura Institute of Polytechnic Studies",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-26",
+    "status": "ESCALATED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #100)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0021",
+    "institutionName": "Brahmaputra Valley College of Engineering",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-23",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #101)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0022",
+    "institutionName": "Aravalli Institute of Technology",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-20",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #102)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0023",
+    "institutionName": "Ganga Institute of Architecture and Design",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-17",
+    "status": "UNDER_PROCESS",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #103)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0024",
+    "institutionName": "Mysore Academy of Technology and Management",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-14",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #104)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0025",
+    "institutionName": "Narmada Institute of Science and Technology",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-11",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #105)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0026",
+    "institutionName": "Shivalik College of Engineering",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-08",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #106)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0027",
+    "institutionName": "Utkal Institute of Computer Applications",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #107)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0028",
+    "institutionName": "Kaveri College of Engineering and Tech",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-02",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #108)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0029",
+    "institutionName": "Vidarbha Institute of Technology",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-30",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #109)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0030",
+    "institutionName": "Bundelkhand Technical Academy",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-27",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #110)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0031",
+    "institutionName": "Thar Institute of Engineering and Tech",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-24",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #111)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0032",
+    "institutionName": "Sundarbans Engineering Institute",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-21",
+    "status": "DISPOSED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #112)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0033",
+    "institutionName": "Godavari College of Engineering",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-18",
+    "status": "PENDING",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #113)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0034",
+    "institutionName": "Doab Technical Institute",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-15",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #114)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0035",
+    "institutionName": "Panchvati Institute of Management",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-12",
+    "status": "DISPOSED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #115)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0036",
+    "institutionName": "Nilgiri Academy of Technical Studies",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-09",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #116)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0037",
+    "institutionName": "Chotanagpur College of Engineering",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-06",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #117)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0038",
+    "institutionName": "Vindhya Institute of Technology",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-03",
+    "status": "DISPOSED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #118)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0039",
+    "institutionName": "Thiruvalluvar Institute of Engineering",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-07-31",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #119)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0040",
+    "institutionName": "Surya College of Engineering and Tech",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-07-28",
+    "status": "PENDING",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #120)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #121)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-20",
+    "status": "ESCALATED",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #122)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-17",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #123)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-14",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #124)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-11",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #125)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #126)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-05",
+    "status": "PENDING",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #127)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-02",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #128)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-29",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #129)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-26",
+    "status": "UNDER_PROCESS",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #130)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-23",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #131)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-20",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #132)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-17",
+    "status": "ESCALATED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #133)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-14",
+    "status": "PENDING",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #134)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-11",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #135)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0016",
+    "institutionName": "Drona College of Technology",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-08",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #136)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0017",
+    "institutionName": "Malabar Institute of Engineering",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #137)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0018",
+    "institutionName": "Marwar Technical University Campus",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-02",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #138)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0019",
+    "institutionName": "Pataliputra Engineering College",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-30",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #139)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0020",
+    "institutionName": "Satpura Institute of Polytechnic Studies",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-27",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #140)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0021",
+    "institutionName": "Brahmaputra Valley College of Engineering",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-24",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #141)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0022",
+    "institutionName": "Aravalli Institute of Technology",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-21",
+    "status": "DISPOSED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #142)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0023",
+    "institutionName": "Ganga Institute of Architecture and Design",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-18",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #143)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0024",
+    "institutionName": "Mysore Academy of Technology and Management",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-15",
+    "status": "ESCALATED",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #144)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0025",
+    "institutionName": "Narmada Institute of Science and Technology",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-12",
+    "status": "DISPOSED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #145)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0026",
+    "institutionName": "Shivalik College of Engineering",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-09",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #146)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0027",
+    "institutionName": "Utkal Institute of Computer Applications",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-06",
+    "status": "UNDER_PROCESS",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #147)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0028",
+    "institutionName": "Kaveri College of Engineering and Tech",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-03",
+    "status": "DISPOSED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #148)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0029",
+    "institutionName": "Vidarbha Institute of Technology",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-07-31",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #149)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0030",
+    "institutionName": "Bundelkhand Technical Academy",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-07-28",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #150)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0031",
+    "institutionName": "Thar Institute of Engineering and Tech",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #151)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0032",
+    "institutionName": "Sundarbans Engineering Institute",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-20",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #152)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0033",
+    "institutionName": "Godavari College of Engineering",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-17",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #153)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0034",
+    "institutionName": "Doab Technical Institute",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-10-14",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #154)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0035",
+    "institutionName": "Panchvati Institute of Management",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-10-11",
+    "status": "PENDING",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #155)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0036",
+    "institutionName": "Nilgiri Academy of Technical Studies",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-10-08",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #156)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0037",
+    "institutionName": "Chotanagpur College of Engineering",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-05",
+    "status": "UNDER_PROCESS",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #157)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0038",
+    "institutionName": "Vindhya Institute of Technology",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-02",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #158)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0039",
+    "institutionName": "Thiruvalluvar Institute of Engineering",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-29",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #159)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0040",
+    "institutionName": "Surya College of Engineering and Tech",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-26",
+    "status": "UNDER_PROCESS",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #160)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0001",
+    "institutionName": "Hillcrest Institute of Technology",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-09-23",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #161)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0002",
+    "institutionName": "Apex National Academy of Engineering",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-09-20",
+    "status": "PENDING",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #162)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0003",
+    "institutionName": "Vidya Vihar College of Science and Tech",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-09-17",
+    "status": "UNDER_PROCESS",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #163)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0004",
+    "institutionName": "Sahyadri Institute of Management and Tech",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-09-14",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #164)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0005",
+    "institutionName": "Vanguard Engineering College",
+    "bureau": "RO",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-09-11",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #165)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0006",
+    "institutionName": "Kalinga Technical Campus",
+    "bureau": "RB",
+    "category": "RAGGING",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-09-08",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #166)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0007",
+    "institutionName": "Aryavarta Institute of Advanced Studies",
+    "bureau": "PGRC",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-09-05",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #167)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0008",
+    "institutionName": "Deccan College of Engineering and Tech",
+    "bureau": "RO",
+    "category": "OTHER",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-09-02",
+    "status": "UNDER_PROCESS",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #168)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0009",
+    "institutionName": "Western Institute of Chemical Technology",
+    "bureau": "RB",
+    "category": "FEES",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-30",
+    "status": "PENDING",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #169)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0010",
+    "institutionName": "Chola Institute of Technical Studies",
+    "bureau": "PGRC",
+    "category": "INTAKE",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-27",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #170)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0011",
+    "institutionName": "Himalayan Institute of Applied Sciences",
+    "bureau": "RO",
+    "category": "FACULTY",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-08-24",
+    "status": "NEW",
+    "description": "Non-formation of Internal Complaints Committee (ICC) under Sexual Harassment Act. (Reference Case #171)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0012",
+    "institutionName": "Zenith Business and Management Institute",
+    "bureau": "RB",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-08-21",
+    "status": "DISPOSED",
+    "description": "Illegal collection of bus transportation charges despite online class mode. (Reference Case #172)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0013",
+    "institutionName": "Pragati College of Engineering",
+    "bureau": "PGRC",
+    "category": "RAGGING",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-08-18",
+    "status": "UNDER_PROCESS",
+    "description": "Undergraduate students forced to buy textbooks published exclusively by college promoters. (Reference Case #173)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0014",
+    "institutionName": "Konkan Maritime and Technical Institute",
+    "bureau": "RO",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-08-15",
+    "status": "UNDER_PROCESS",
+    "description": "Placement brochure claimed Google and Microsoft visits without any actual campus drive. (Reference Case #174)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0015",
+    "institutionName": "Coromandel Academy of Pharmacy",
+    "bureau": "RB",
+    "category": "OTHER",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-08-12",
+    "status": "DISPOSED",
+    "description": "Faculty forced to do non-academic admission marketing duty under threat of salary deduction. (Reference Case #175)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0016",
+    "institutionName": "Drona College of Technology",
+    "bureau": "PGRC",
+    "category": "FEES",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-08-09",
+    "status": "NEW",
+    "description": "Library lacks mandatory subscription to National Digital Library and online ejournals. (Reference Case #176)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0017",
+    "institutionName": "Malabar Institute of Engineering",
+    "bureau": "RO",
+    "category": "INTAKE",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-08-06",
+    "status": "ESCALATED",
+    "description": "Delay in issuance of final consolidated marksheets causing job offer cancellation. (Reference Case #177)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0018",
+    "institutionName": "Marwar Technical University Campus",
+    "bureau": "RB",
+    "category": "FACULTY",
+    "sourceChannel": "EMAIL",
+    "receivedOn": "2026-08-03",
+    "status": "DISPOSED",
+    "description": "Grievance redressal portal on college website is dysfunctional and unmonitored. (Reference Case #178)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0019",
+    "institutionName": "Pataliputra Engineering College",
+    "bureau": "PGRC",
+    "category": "INFRASTRUCTURE",
+    "sourceChannel": "LETTER",
+    "receivedOn": "2026-07-31",
+    "status": "UNDER_PROCESS",
+    "description": "Canteen charges exorbitant rates for substandard and unhygienic food. (Reference Case #179)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0020",
+    "institutionName": "Satpura Institute of Polytechnic Studies",
+    "bureau": "RO",
+    "category": "RAGGING",
+    "sourceChannel": "MINISTRY",
+    "receivedOn": "2026-07-28",
+    "status": "UNDER_PROCESS",
+    "description": "Refusal to issue migration certificate after completion of degree requirements. (Reference Case #180)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0021",
+    "institutionName": "Brahmaputra Valley College of Engineering",
+    "bureau": "RB",
+    "category": "NORM_VIOLATION",
+    "sourceChannel": "VIP",
+    "receivedOn": "2026-10-23",
+    "status": "NEW",
+    "description": "Excessive exam fee collected in violation of state fee fixation committee guidelines. (Reference Case #181)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0022",
+    "institutionName": "Aravalli Institute of Technology",
+    "bureau": "PGRC",
+    "category": "OTHER",
+    "sourceChannel": "COURT",
+    "receivedOn": "2026-10-20",
+    "status": "UNDER_PROCESS",
+    "description": "Inadequate drinking water and hygienic sanitation facilities in girls common room. (Reference Case #182)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0023",
+    "institutionName": "Ganga Institute of Architecture and Design",
+    "bureau": "RO",
+    "category": "FEES",
+    "sourceChannel": "RTI",
+    "receivedOn": "2026-10-17",
+    "status": "PENDING",
+    "description": "Non-disbursement of PG GATE scholarship stipend to eligible M.Tech students. (Reference Case #183)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0024",
+    "institutionName": "Mysore Academy of Technology and Management",
+    "bureau": "RB",
+    "category": "INTAKE",
+    "sourceChannel": "OTHER",
+    "receivedOn": "2026-10-14",
+    "status": "UNDER_PROCESS",
+    "description": "College principal does not possess required 15 years teaching experience and API score. (Reference Case #184)"
+  },
+  {
+    "institutionPermanentId": "AICTE-PID-0025",
+    "institutionName": "Narmada Institute of Science and Technology",
+    "bureau": "PGRC",
+    "category": "FACULTY",
+    "sourceChannel": "CPGRAMS",
+    "receivedOn": "2026-10-11",
+    "status": "UNDER_PROCESS",
+    "description": "Biometric attendance records falsified to demonstrate compliance during AICTE surprise visit. (Reference Case #185)"
+  }
+]

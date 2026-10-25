@@ -1,0 +1,83 @@
+[
+  {
+    "username": "officer.rb1",
+    "fullName": "Shri Rajesh Kumar",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "OFFICER",
+    "bureauCode": "RB",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "username": "officer.pgrc1",
+    "fullName": "Smt. Sunita Sharma",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "OFFICER",
+    "bureauCode": "PGRC",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "username": "officer.ro1",
+    "fullName": "Dr. Vivek Anand",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "OFFICER",
+    "bureauCode": "RO",
+    "region": "West",
+    "active": 1
+  },
+  {
+    "username": "head.rb",
+    "fullName": "Prof. Anil Sahasrabudhe",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "HEAD",
+    "bureauCode": "RB",
+    "region": "North",
+    "active": 1
+  },
+  {
+    "username": "head.pgrc",
+    "fullName": "Dr. Meenakshi Sundaram",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "HEAD",
+    "bureauCode": "PGRC",
+    "region": "Central",
+    "active": 1
+  },
+  {
+    "username": "coordinator",
+    "fullName": "Dr. Rajendra Prasad",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "COORDINATOR",
+    "bureauCode": null,
+    "region": null,
+    "active": 1
+  },
+  {
+    "username": "management",
+    "fullName": "Shri T. G. Sitharam",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "MANAGEMENT",
+    "bureauCode": null,
+    "region": null,
+    "active": 1
+  },
+  {
+    "username": "admin",
+    "fullName": "System Administrator",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "ADMIN",
+    "bureauCode": null,
+    "region": null,
+    "active": 1
+  },
+  {
+    "username": "system",
+    "fullName": "Automated AICTE Escalation Bot",
+    "passwordHash": "!LOCKED_SYSTEM_ACCOUNT!_NON_LOGIN_RANDOM_SECRET_HASH",
+    "role": "ADMIN",
+    "bureauCode": null,
+    "region": null,
+    "active": 1
+  }
+]

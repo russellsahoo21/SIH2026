@@ -1,0 +1,6 @@
+[
+  { "code": "RB", "name": "Regulation Bureau", "active": 1 },
+  { "code": "PGRC", "name": "Public Grievance Redressal Cell", "active": 1 },
+  { "code": "RO", "name": "Regional Office", "active": 1 },
+  { "code": "CELL", "name": "Approval Bureau / Special Cell", "active": 1 }
+]

@@ -9,7 +9,7 @@
     "dev": "nodemon src/server.js",
     "db:migrate": "node src/db/migrate.js",
     "db:reset": "node scripts/reset-db.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,9 +21,12 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
     "pg": "^8.13.1",
+    "xlsx": "^0.18.5",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "jest": "^30.5.2",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.3.1"
   }
 }

@@ -1,0 +1,9 @@
+[
+  { "category": "FEES", "days": 21 },
+  { "category": "INTAKE", "days": 21 },
+  { "category": "FACULTY", "days": 30 },
+  { "category": "INFRASTRUCTURE", "days": 30 },
+  { "category": "RAGGING", "days": 7 },
+  { "category": "NORM_VIOLATION", "days": 21 },
+  { "category": "OTHER", "days": 21 }
+]

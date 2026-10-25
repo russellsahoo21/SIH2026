@@ -12,6 +12,12 @@ import bureausRoutes from './modules/bureaus/bureaus.routes.js';
 import usersRoutes from './modules/users/users.routes.js';
 import casesRoutes from './modules/cases/cases.routes.js';
 
+// Route modules owned by Dev C
+import slaRoutes from './modules/sla/sla.routes.js';
+import dashboardRoutes from './modules/dashboard/dashboard.routes.js';
+import reportsRoutes from './modules/reports/reports.routes.js';
+import importsRoutes from './modules/imports/imports.routes.js';
+
 export function createApp() {
   const app = express();
 
@@ -41,6 +47,12 @@ export function createApp() {
   app.use('/api/bureaus', bureausRoutes);
   app.use('/api/users', usersRoutes);
   app.use('/api/cases', casesRoutes);
+
+  // Dev C Analytics, SLA, Reports & Imports API routes
+  app.use('/api/sla-config', slaRoutes);
+  app.use('/api/dashboard', dashboardRoutes);
+  app.use('/api/reports', reportsRoutes);
+  app.use('/api/imports', importsRoutes);
 
   // 404 & Global Error Handler
   app.use(notFound);
