@@ -33,6 +33,10 @@ async function testEndpoints() {
   console.log('Bureaus Status:', bureausRes.status, await bureausRes.json());
 
   console.log('\nTesting Register Case...');
+  // Find first available institution
+  const instRes = await pool.query('SELECT id, name FROM institutions LIMIT 1');
+  const testInstId = instRes.rows[0]?.id || 1;
+
   const registerRes = await fetch(`${baseUrl}/api/cases`, {
     method: 'POST',
     headers: {
@@ -40,7 +44,7 @@ async function testEndpoints() {
       Authorization: `Bearer ${token}`
     },
     body: JSON.stringify({
-      institutionId: 1,
+      institutionId: testInstId,
       category: 'FEES',
       sourceChannel: 'CPGRAMS',
       receivedOn: '2026-10-25',
