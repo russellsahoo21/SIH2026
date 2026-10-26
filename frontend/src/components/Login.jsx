@@ -57,7 +57,7 @@ export default function Login({ onLoginSuccess, onRegister }) {
   };
 
   return (
-    <div style={{
+    <div className="login-page" style={{
       minHeight: 'calc(100vh - 120px)',
       background: 'linear-gradient(135deg, #0A2540 0%, #0F3E6D 50%, #15528E 100%)',
       display: 'flex',
@@ -79,7 +79,7 @@ export default function Login({ onLoginSuccess, onRegister }) {
         pointerEvents: 'none'
       }} />
 
-      <div style={{
+      <div className="login-card" style={{
         maxWidth: '1060px',
         width: '100%',
         display: 'grid',

@@ -1,0 +1,76 @@
+/* Responsive layout overrides; tables scroll within their own cards. */
+.portal-main, .gov-table-card, .gov-filter-panel, .gov-title-group { min-width: 0; }
+@media (max-width: 1024px) {
+  .gov-accessibility-bar { flex-wrap: wrap; gap: 8px; padding: 8px 14px; height: auto; }
+  .accessibility-actions { flex-wrap: wrap; gap: 8px; }
+  .gov-header { flex-wrap: wrap; }
+  .gov-brand { flex: 1 1 420px; }
+  .sub-nav-bar { overflow-x: auto; flex-wrap: nowrap; }
+  .sub-nav-item { flex-shrink: 0; white-space: nowrap; }
+  .portal-layout { flex-direction: column; }
+  .gov-sidebar { width: 100%; }
+  .sidebar-nav { display: flex; overflow-x: auto; padding: 0; }
+  .sidebar-nav-item { flex-shrink: 0; white-space: nowrap; border-left: 0; padding: 12px 16px; }
+  .gov-sidebar > div { display: none; }
+  .gov-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .welcome-banner, .welcome-info, .gov-filter-header, .table-pagination-bar { flex-wrap: wrap; gap: 12px; }
+  .login-card { grid-template-columns: minmax(0, 1fr) !important; }
+  .login-card > div { padding: 28px !important; border-right: 0 !important; }
+}
+@media (max-width: 640px) {
+  .gov-header { padding: 12px; }
+  .gov-brand { flex-basis: 100%; gap: 10px; }
+  .gov-title-group h1 { font-size: 16px; overflow-wrap: anywhere; }
+  .gov-emblem-group { width: 100%; justify-content: space-between; gap: 8px; }
+  .national-emblem { border: 0; padding-right: 0; }
+  .user-quick-profile { gap: 8px; min-width: 0; }
+  .user-menu-pill { max-width: 180px; padding: 8px; }
+  .user-menu-pill span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .notification-panel { position: fixed; top: 150px; left: 12px; right: 12px; width: auto; max-height: 60dvh; overflow-y: auto; }
+  .gov-accessibility-bar > div:first-child { display: none; }
+  .accessibility-actions { width: 100%; justify-content: space-between; }
+  .gov-announcement-bar { font-size: 12px; }
+  .announcement-badge { padding-left: 10px; padding-right: 16px; font-size: 11px; }
+  .portal-main { width: 100%; padding: 16px 12px; }
+  .welcome-banner { padding: 14px; }
+  .welcome-info { align-items: flex-start; }
+  .welcome-meta { border: 0; padding-left: 0; }
+  .kpi-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .kpi-card { padding: 12px; gap: 8px; flex-wrap: wrap; }
+  .kpi-value { font-size: 26px; }
+  .kpi-icon-wrap { width: 34px; height: 34px; }
+  .gov-filter-panel { padding: 14px; }
+  .gov-filter-grid { grid-template-columns: minmax(0, 1fr); }
+  .portal-main div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
+  .portal-main div[style*="display: flex"], .modal-body div[style*="display: flex"] { flex-wrap: wrap; }
+  .portal-main input, .portal-main select, .portal-main textarea { max-width: 100%; min-width: 0; }
+  .gov-btn { min-height: 42px; white-space: normal; }
+  .gov-input, .gov-select, .student-form input, .student-form textarea { font-size: 16px; }
+  .gov-table-wrap { overflow-x: auto; width: 100%; }
+  .gov-data-table { min-width: 680px; }
+  .table-pagination-bar { padding: 12px; }
+  .pagination-controls { flex-wrap: wrap; }
+  .login-page { padding: 20px 12px !important; min-height: auto !important; }
+  .login-card > div { padding: 22px 18px !important; }
+  .login-card h2 { font-size: 25px !important; }
+  .login-card form > div > div[style*="display: flex"] { flex-wrap: wrap; }
+  .login-card input { min-width: 0; font-size: 16px; }
+  .login-card form input[placeholder] { max-width: 100%; }
+  .signup-wrap { margin: 20px auto; padding: 0 12px; }
+  .student-portal { margin: 20px auto; padding: 0 12px; }
+  .student-case { flex-wrap: wrap; gap: 10px; padding: 14px; }
+  .student-case span { overflow-wrap: anywhere; }
+  .student-case span:last-child { margin-left: 30px; }
+  .portal-toolbar h2 { width: 100%; }
+  .modal-overlay { padding: 8px; align-items: center; }
+  .modal-container { width: 100%; max-height: calc(100dvh - 16px); overflow-y: auto; }
+  .modal-header, .modal-body, .modal-footer { padding: 14px; }
+  .modal-header h3 { font-size: 15px; overflow-wrap: anywhere; }
+  .modal-body textarea { max-width: 100%; }
+  .gov-footer { padding: 24px 16px 16px; }
+  .footer-columns { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .digital-india-badge { flex-wrap: wrap; }
+}
+
+@media (max-width:640px) { .login-card > div:last-child { order:-1; } }
