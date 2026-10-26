@@ -71,6 +71,27 @@ export default function OverlapsView({ onViewCase, user }) {
     }
   };
 
+  const handleMarkNotRelated = async (caseIds) => {
+    if (!selectedOverlap || !canCoordinate || !caseIds?.length) return;
+    setError('');
+    setNotice('');
+    setLinking(true);
+    try {
+      const result = await api.notRelatedOverlap(selectedOverlap.id, {
+        caseIds,
+        notes: coordinationNotes || 'Marked as unrelated false positive by coordinator.'
+      });
+      setSelectedOverlap(result.data);
+      const isDismissed = result.data?.status === 'DISMISSED';
+      setNotice(isDismissed ? 'Cluster dismissed as unrelated false positive.' : `${caseIds.length} case(s) marked as unrelated.`);
+      setOverlaps(items => items.map(item => item.id === result.data.id ? { ...item, ...result.data } : item));
+    } catch (err) {
+      setError('Failed to mark unrelated: ' + err.message);
+    } finally {
+      setLinking(false);
+    }
+  };
+
   return (
     <div>
       <div style={{ marginBottom: '20px' }}>
@@ -195,13 +216,26 @@ export default function OverlapsView({ onViewCase, user }) {
                           {m.memberState || 'DETECTED'}
                         </span>
                       </div>
-                      <button
-                        onClick={() => onViewCase(m.caseId)}
-                        className="gov-btn gov-btn-outline"
-                        style={{ padding: '3px 10px', fontSize: '11.5px' }}
-                      >
-                        Inspect
-                      </button>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <button
+                          onClick={() => onViewCase(m.caseId)}
+                          className="gov-btn gov-btn-outline"
+                          style={{ padding: '3px 10px', fontSize: '11.5px' }}
+                        >
+                          Inspect
+                        </button>
+                        {canCoordinate && selectedOverlap.status !== 'DISMISSED' && m.memberState !== 'NOT_RELATED' && (
+                          <button
+                            disabled={linking}
+                            onClick={() => handleMarkNotRelated([m.caseId])}
+                            className="gov-btn gov-btn-secondary"
+                            style={{ padding: '3px 10px', fontSize: '11.5px', color: '#DC2626', borderColor: '#FCA5A5' }}
+                            title="Mark this specific complaint as unrelated false positive"
+                          >
+                            Unrelate
+                          </button>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -236,14 +270,26 @@ export default function OverlapsView({ onViewCase, user }) {
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Provide justification for linking and instructions for the lead bureau..."
+                    placeholder="Provide justification for linking or reason for marking as unrelated..."
                     className="gov-input"
                     value={coordinationNotes}
                     onChange={(e) => setCoordinationNotes(e.target.value)}
                   />
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', flexWrap: 'wrap' }}>
+                  {canCoordinate && selectedOverlap.status !== 'DISMISSED' && (
+                    <button
+                      type="button"
+                      disabled={linking || !linkedCaseIds(selectedOverlap).length}
+                      onClick={() => handleMarkNotRelated(linkedCaseIds(selectedOverlap))}
+                      className="gov-btn gov-btn-secondary"
+                      style={{ color: '#DC2626', borderColor: '#FCA5A5' }}
+                      title="Dismiss false positives if complaints refer to distinct, unrelated campus matters"
+                    >
+                      {linking ? 'Processing...' : 'Mark as Unrelated'}
+                    </button>
+                  )}
                   <button
                     disabled={linking || !canCoordinate || !linkedCaseIds(selectedOverlap).length}
                     onClick={handleLinkGroup}

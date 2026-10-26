@@ -1,7 +1,7 @@
 import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
-import { Lock, X, FileText } from 'lucide-react';
+import { Lock, X, FileText, UserCheck } from 'lucide-react';
 
 export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
  const { t } = useLanguage();
@@ -12,6 +12,10 @@ export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
   const [targetStatus, setTargetStatus] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [officers, setOfficers] = useState([]);
+  const [selectedOfficerId, setSelectedOfficerId] = useState('');
+  const [assigning, setAssigning] = useState(false);
+  const [assignSuccess, setAssignSuccess] = useState('');
 
   const loadCase = useCallback(async () => {
     if (!caseId) return;
@@ -70,6 +74,49 @@ export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
       setError(err.message);
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    if (user && ['HEAD', 'ADMIN'].includes(user.role)) {
+      const bureau = user.role === 'HEAD' ? user.bureau : (caseData?.bureauCode || caseData?.bureau);
+      if (bureau) {
+        api.getUsers({ role: 'OFFICER', bureau })
+          .then(res => {
+            const list = Array.isArray(res.data) ? res.data : (res.data?.users || []);
+            setOfficers(list);
+          })
+          .catch(err => {
+            console.error('Failed to load bureau officers:', err);
+          });
+      }
+    }
+  }, [user, caseData?.bureauCode, caseData?.bureau]);
+
+  useEffect(() => {
+    if (caseData?.assignedOfficer?.id || caseData?.assignedOfficerId) {
+      setSelectedOfficerId(String(caseData.assignedOfficer?.id || caseData.assignedOfficerId));
+    }
+  }, [caseData]);
+
+  const handleAssignOfficer = async () => {
+    if (!selectedOfficerId) return;
+    setAssigning(true);
+    setError('');
+    setAssignSuccess('');
+    try {
+      await api.assignOfficer(caseId, {
+        officerId: Number(selectedOfficerId),
+        version: caseData.version
+      });
+      setAssignSuccess(t("Officer assigned successfully!"));
+      setTimeout(() => setAssignSuccess(''), 4000);
+      await loadCase();
+      if (onUpdated) onUpdated();
+    } catch (err) {
+      setError(err.message || 'Failed to assign officer');
+    } finally {
+      setAssigning(false);
     }
   };
 
@@ -133,11 +180,47 @@ export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
                 <div style={{ fontWeight: 700, color: '#0A3663', fontSize: '15px', marginBottom: '4px' }}>
                   {caseData.institution?.name || caseData.institutionName || 'Institution Details'}
                 </div>
-                <div style={{ display: 'flex', gap: '20px', fontSize: '12.5px', color: '#475569', marginTop: '6px' }}>
+                <div style={{ display: 'flex', gap: '20px', fontSize: '12.5px', color: '#475569', marginTop: '6px', flexWrap: 'wrap' }}>
                   <div>{t("Due Date:")} <strong>{caseData.dueOn ? new Date(caseData.dueOn).toLocaleDateString('en-GB') : '—'}</strong></div>
                   <div>{t("SLA Window:")} <strong>{caseData.slaDays || 30} days</strong></div>
-                  <div>{t("Assigned Officer:")} <strong>{caseData.assignedOfficer?.fullName || caseData.officer?.name || '— Unassigned —'}</strong></div>
+                  <div>{t("Assigned Officer:")} <strong style={{ color: caseData.assignedOfficer?.fullName || caseData.officer?.name ? '#0A3663' : '#D97706' }}>{caseData.assignedOfficer?.fullName || caseData.officer?.name || '— Unassigned —'}</strong></div>
                 </div>
+
+                {/* Bureau Head Officer Assignment Tool */}
+                {['HEAD', 'ADMIN'].includes(user?.role) && (user.role === 'ADMIN' || user.bureau === (caseData.bureauCode || caseData.bureau)) && caseData.status !== 'DISPOSED' && (
+                  <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed #CBD5E1', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12.5px', fontWeight: 600, color: '#0A3663' }}>
+                      <UserCheck size={16} color="#0A3663" />
+                      <span>{t("Assign / Reassign Officer:")}</span>
+                    </div>
+                    <select
+                      className="gov-select"
+                      style={{ padding: '5px 10px', fontSize: '12.5px', minWidth: '220px' }}
+                      value={selectedOfficerId}
+                      onChange={(e) => setSelectedOfficerId(e.target.value)}
+                      disabled={assigning}
+                    >
+                      <option value="">-- Choose Bureau Officer --</option>
+                      {officers.map(o => (
+                        <option key={o.id} value={o.id}>
+                          {o.fullName || o.full_name || o.username} ({o.username})
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      className="gov-btn gov-btn-primary"
+                      style={{ padding: '5px 14px', fontSize: '12px' }}
+                      disabled={!selectedOfficerId || assigning || String(selectedOfficerId) === String(caseData.assignedOfficer?.id || caseData.assignedOfficerId)}
+                      onClick={handleAssignOfficer}
+                    >
+                      {assigning ? t('Assigning...') : t('Update Assignment')}
+                    </button>
+                    {assignSuccess && (
+                      <span style={{ fontSize: '12px', color: '#16A34A', fontWeight: 600 }}>✓ {assignSuccess}</span>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Description */}

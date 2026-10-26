@@ -68,20 +68,20 @@ describe('Reports API', () => {
     expect(Array.isArray(res.body.data)).toBe(true);
   });
 
-  test.each(['OFFICER','HEAD','COORDINATOR','MANAGEMENT','ADMIN'])('%s can preview and download reports', async role => {
-    const token = makeTestToken({role, bureau:'RB'});
-    for (const format of ['json','xlsx']) {
-      const res = await request(app).get('/api/reports/ageing?format='+format).set('Authorization', 'Bearer '+token).expect(200);
-      if(format==='xlsx') expect(res.headers['content-type']).toContain('spreadsheetml');
+  test.each(['OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'])('%s can preview and download reports', async role => {
+    const token = makeTestToken({ role, bureau: 'RB' });
+    for (const format of ['json', 'xlsx']) {
+      const res = await request(app).get('/api/reports/ageing?format=' + format).set('Authorization', 'Bearer ' + token).expect(200);
+      if (format === 'xlsx') expect(res.headers['content-type']).toContain('spreadsheetml');
       else expect(Array.isArray(res.body.data)).toBe(true);
     }
   });
-  test.each(['STUDENT','COLLEGE'])('%s cannot access reports', async role => {
-    const token = makeTestToken({role});
-    for (const format of ['json','xlsx']) await request(app).get('/api/reports/ageing?format='+format).set('Authorization','Bearer '+token).expect(403);
+  test.each(['STUDENT', 'COLLEGE'])('%s cannot access reports', async role => {
+    const token = makeTestToken({ role });
+    for (const format of ['json', 'xlsx']) await request(app).get('/api/reports/ageing?format=' + format).set('Authorization', 'Bearer ' + token).expect(403);
   });
   test('Officer cannot override own bureau scope', async () => {
-    const res = await request(app).get('/api/reports/bureau-wise?bureau=PGRC').set('Authorization','Bearer '+officerToken).expect(200);
+    const res = await request(app).get('/api/reports/bureau-wise?bureau=PGRC').set('Authorization', 'Bearer ' + officerToken).expect(200);
     expect(res.body.data.every(row => row.bureau === 'RB' || row.bureauCode === 'RB')).toBe(true);
   });
 
