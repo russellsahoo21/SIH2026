@@ -19,28 +19,21 @@ import { getCurrentUser, clearAuth } from './services/api';
 export default function App() {
   const { t, language } = useLanguage();
   const [signUp, setSignUp] = useState(false);
-  const [user, setUser] = useState(null);
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'register', 'cases', 'institutions', 'overlaps', 'dashboards', 'reports', 'institution-profile'
+  const [user, setUser] = useState(() => getCurrentUser());
+  const [activeTab, setActiveTab] = useState(() => {
+    const saved = getCurrentUser();
+    if (saved?.role === 'MANAGEMENT') return 'dashboards';
+    if (saved?.role === 'COORDINATOR') return 'overlaps';
+    return 'home';
+  }); // 'home', 'register', 'cases', 'institutions', 'overlaps', 'dashboards', 'reports', 'institution-profile'
   const [selectedCaseId, setSelectedCaseId] = useState(null);
   const [selectedInstitutionId, setSelectedInstitutionId] = useState(null);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   useEffect(() => {
-    const savedUser = getCurrentUser();
-    if (savedUser) {
-      setUser(savedUser);
-      if (savedUser.role === 'MANAGEMENT') {
-        setActiveTab('dashboards');
-      } else if (savedUser.role === 'COORDINATOR') {
-        setActiveTab('overlaps');
-      }
-    }
-  }, []);
-
-  useEffect(() => {
     const names = {home:'Home',cases:'My Cases',register:'Register Case',institutions:'Institutions',overlaps:'Overlap Coordination',dashboards:'Management Dashboard',reports:'Reports', 'institution-profile':'Institution Profile'};
     document.title = t(user ? (['STUDENT','COLLEGE'].includes(user.role) ? 'My Complaints' : names[activeTab] || 'Portal') : signUp ? 'Account Registration' : 'Login') + (language === 'hi' ? ' | एआईसीटीई शिकायत पोर्टल' : ' | AICTE Complaint Portal');
-  },[user,activeTab,signUp,language]);
+  }, [user, activeTab, signUp, language, t]);
   const handleLoginSuccess = (loggedInUser) => {
     setSignUp(false);
     setUser(loggedInUser);

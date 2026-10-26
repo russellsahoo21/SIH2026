@@ -2,8 +2,8 @@ import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { 
-  Building2, MapPin, Calendar, GitMerge, Search, RotateCcw, 
-  ExternalLink, ArrowRight, ShieldAlert, CheckCircle, Clock 
+  Building2, MapPin, Calendar, GitMerge, Search, 
+  ShieldAlert, CheckCircle, Clock 
 } from 'lucide-react';
 
 export default function InstitutionProfile({ institutionId, onBack, onViewCase }) {

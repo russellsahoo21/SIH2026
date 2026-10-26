@@ -1,7 +1,7 @@
 import { useLanguage } from '../i18n/Language';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
-import { GitMerge, Link2, ShieldAlert, CheckCircle, Search, Eye } from 'lucide-react';
+import { GitMerge, Link2 } from 'lucide-react';
 
 export default function OverlapsView({ onViewCase }) {
  const { t } = useLanguage();
@@ -12,24 +12,23 @@ export default function OverlapsView({ onViewCase }) {
   const [coordinationNotes, setCoordinationNotes] = useState('');
   const [linking, setLinking] = useState(false);
 
-  const loadOverlaps = async () => {
+  const loadOverlaps = useCallback(async () => {
     setLoading(true);
     try {
       const res = await api.getOverlaps();
-      setOverlaps(res.data || []);
-      if (res.data?.length > 0 && !selectedOverlap) {
-        setSelectedOverlap(res.data[0]);
-      }
+      const list = res.data || [];
+      setOverlaps(list);
+      setSelectedOverlap(prev => (prev || (list.length > 0 ? list[0] : null)));
     } catch (err) {
       console.error('Failed to load overlap alerts:', err);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     loadOverlaps();
-  }, []);
+  }, [loadOverlaps]);
 
   const handleLinkGroup = async () => {
     if (!selectedOverlap) return;

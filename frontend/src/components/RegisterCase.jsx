@@ -10,7 +10,7 @@ export default function RegisterCase({ user, onCaseCreated, onCancel }) {
   const [selectedInst, setSelectedInst] = useState(null);
   const [category, setCategory] = useState('FEES');
   const [sourceChannel, setSourceChannel] = useState('CPGRAMS');
-  const [receivedOn, setReceivedOn] = useState(new Date().toISOString().split('T')[0]);
+  const [receivedOn, setReceivedOn] = useState(() => new Date().toISOString().split('T')[0]);
 
   // AI suggestions & Matching states
   const [loadingSuggestions, setLoadingSuggestions] = useState(false);

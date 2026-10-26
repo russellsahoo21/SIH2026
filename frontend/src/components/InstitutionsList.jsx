@@ -1,19 +1,19 @@
 import { useLanguage } from '../i18n/Language';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
-import { Building2, Search, MapPin, Eye, ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight } from 'lucide-react';
+import { Building2, Search, Eye, ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight } from 'lucide-react';
 
 export default function InstitutionsList({ onSelectInstitution }) {
  const { t } = useLanguage();
   const [institutions, setInstitutions] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize] = useState(10);
   const [searchQuery, setSearchQuery] = useState('');
   const [regionFilter, setRegionFilter] = useState('');
   const [loading, setLoading] = useState(true);
 
-  const fetchInstitutions = async () => {
+  const fetchInstitutions = useCallback(async () => {
     setLoading(true);
     try {
       const res = await api.getInstitutions({
@@ -29,11 +29,11 @@ export default function InstitutionsList({ onSelectInstitution }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, pageSize, searchQuery, regionFilter]);
 
   useEffect(() => {
     fetchInstitutions();
-  }, [page, pageSize, regionFilter]);
+  }, [fetchInstitutions]);
 
   const handleSearch = (e) => {
     e.preventDefault();

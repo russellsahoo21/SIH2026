@@ -1,6 +1,6 @@
 import { useLanguage } from '../i18n/Language';
 import React, { useState } from 'react';
-import { Bell, User, ChevronDown, LogOut, Search, Volume2 } from 'lucide-react';
+import { Bell, User, ChevronDown, LogOut, Volume2 } from 'lucide-react';
 import { api, apiRequest, getActiveBackend, setActiveBackend } from '../services/api';
 
 export default function Header({ user, onLogout, onTabChange, activeTab, onBackendChange, onViewCase }) {
@@ -52,9 +52,9 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
 
         <div className="accessibility-actions">
           <div className="text-resize-btns">
-            <button onClick={() => changeFontSize('small')} title="Decrease font size">A-</button>
-            <button onClick={() => changeFontSize('normal')} title="Reset font size">A</button>
-            <button onClick={() => changeFontSize('large')} title="Increase font size">A+</button>
+            <button onClick={() => changeFontSize('small')} aria-pressed={fontSize === 'small'} title="Decrease font size">A-</button>
+            <button onClick={() => changeFontSize('normal')} aria-pressed={fontSize === 'normal'} title="Reset font size">A</button>
+            <button onClick={() => changeFontSize('large')} aria-pressed={fontSize === 'large'} title="Increase font size">A+</button>
           </div>
           <span style={{ color: '#CBD5E1' }}>|</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

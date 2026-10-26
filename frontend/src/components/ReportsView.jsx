@@ -1,10 +1,8 @@
-import { useLanguage } from '../i18n/Language';
 import React, { useState } from 'react';
 import { api, getFullApiUrl } from '../services/api';
-import { FileSpreadsheet, Download, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
+import { FileSpreadsheet, Download } from 'lucide-react';
 
 export default function ReportsView() {
- const { t } = useLanguage();
   const [reportType, setReportType] = useState('institution-wise');
   const [reportData, setReportData] = useState(null);
   const [loading, setLoading] = useState(false);

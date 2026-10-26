@@ -12,8 +12,12 @@ const router = Router();
 router.use(authenticate, requireRole('STUDENT', 'COLLEGE'));
 const route = fn => (req,res,next) => Promise.resolve(fn(req,res)).catch(next);
 router.get('/institutions', route(async (req,res) => {
-  const result = await query('SELECT id, name FROM institutions WHERE active = 1 AND name ILIKE $1 ORDER BY name LIMIT 50', ['%' + String(req.query.q || '').slice(0,100) + '%']);
-  return sendSuccess(res,result.rows);
+  const q = String(req.query.q || '').trim().slice(0, 100);
+  const result = await query(
+    'SELECT id, name, permanent_id AS "permanentId" FROM institutions WHERE active = 1 AND (name ILIKE $1 OR permanent_id ILIKE $1) ORDER BY name LIMIT 200',
+    ['%' + q + '%']
+  );
+  return sendSuccess(res, result.rows);
 }));
 router.get('/cases', route(async (req,res) => {
   const result = await query('SELECT c.id, c.status, c.category, c.bureau_code AS bureau, c.due_on AS "dueOn", c.updated_at AS "updatedAt", i.name AS "institutionName" FROM cases c JOIN institutions i ON i.id=c.institution_id WHERE c.created_by=$1 ORDER BY c.created_at DESC LIMIT 100', [req.user.id]);

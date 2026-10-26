@@ -1,12 +1,10 @@
 import { useLanguage } from '../i18n/Language';
 import React from 'react';
-import { Home, PlusCircle, FolderOpen, Building2, GitMerge, BarChart3, Settings, ShieldAlert } from 'lucide-react';
+import { Home, PlusCircle, FolderOpen, Building2, GitMerge, BarChart3 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, onTabChange, user }) {
  const { t } = useLanguage();
   const isOfficerOrHead = user?.role === 'OFFICER' || user?.role === 'HEAD';
-  const isManagement = user?.role === 'MANAGEMENT';
-  const isCoordinator = user?.role === 'COORDINATOR';
 
   return (
     <aside className="gov-sidebar">

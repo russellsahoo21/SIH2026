@@ -1,10 +1,7 @@
 import { useLanguage } from '../i18n/Language';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
-import {
-  Lock, X, FileText, ArrowLeft, Send, CheckCircle2, AlertOctagon,
-  Clock, GitMerge, UserCheck, CornerUpRight, Paperclip
-} from 'lucide-react';
+import { Lock, X, FileText } from 'lucide-react';
 
 export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
  const { t } = useLanguage();
@@ -16,7 +13,8 @@ export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  const loadCase = async () => {
+  const loadCase = useCallback(async () => {
+    if (!caseId) return;
     setLoading(true);
     try {
       const res = await api.getCase(caseId);
@@ -27,11 +25,11 @@ export default function CaseDetailModal({ caseId, user, onClose, onUpdated }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [caseId]);
 
   useEffect(() => {
-    if (caseId) loadCase();
-  }, [caseId]);
+    loadCase();
+  }, [loadCase]);
 
   const handleStatusChange = async () => {
     if (!targetStatus) return;

@@ -6,23 +6,22 @@ import {
   MapPin, CheckCircle, Clock 
 } from 'lucide-react';
 
-export default function ManagementDashboard({ user, onViewCase }) {
+export default function ManagementDashboard({ onViewCase }) {
  const { t } = useLanguage();
   const [summary, setSummary] = useState(null);
   const [workload, setWorkload] = useState(null);
-  const [ageing, setAgeing] = useState(null);
   const [topOverdue, setTopOverdue] = useState([]);
-  const [regionSummary, setRegionSummary] = useState([]);
   const [monthlyDisposal, setMonthlyDisposal] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('All India');
   const [loading, setLoading] = useState(true);
+  const [nowTimestamp] = useState(() => Date.now());
 
   useEffect(() => {
     async function loadDashboard() {
       setLoading(true);
       try {
         const regionParam = selectedRegion !== 'All India' ? { region: selectedRegion } : {};
-        const [sumRes, workRes, ageRes, overdueRes, regRes, dispRes] = await Promise.all([
+        const [sumRes, workRes, , overdueRes, , dispRes] = await Promise.all([
           api.getDashboardSummary(regionParam),
           api.getWorkload().catch(() => ({ data: { byBureau: [] } })),
           api.getAgeing().catch(() => ({ data: { bands: {} } })),
@@ -33,9 +32,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
 
         setSummary(sumRes.data);
         setWorkload(workRes.data);
-        setAgeing(ageRes.data);
         setTopOverdue(overdueRes.data || []);
-        setRegionSummary(regRes.data || []);
         setMonthlyDisposal(dispRes.data || []);
       } catch (err) {
         console.error('Failed to load senior management dashboard from DB:', err);
@@ -49,7 +46,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
   const handleExport = async () => {
     try {
       window.open(getFullApiUrl('/reports/bureau-wise?format=xlsx'), '_blank');
-    } catch (err) {
+    } catch {
       alert('Report download initiated.');
     }
   };
@@ -334,7 +331,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
                 </tr>
               ) : (
                 topOverdue.map(c => {
-                  const daysOverdue = c.daysOverdue ?? Math.max(1, Math.round((new Date() - new Date(c.dueOn)) / (1000 * 60 * 60 * 24)));
+                  const daysOverdue = c.daysOverdue ?? Math.max(1, Math.round((nowTimestamp - new Date(c.dueOn).getTime()) / (1000 * 60 * 60 * 24)));
                   return (
                     <tr key={c.id}>
                       <td>

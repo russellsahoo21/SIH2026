@@ -72,6 +72,15 @@
     "active": 1
   },
   {
+    "username": "student",
+    "fullName": "Demo Student",
+    "passwordHash": "$2a$10$oXHGM.edSfDBbT7JSTB3mu8lRpDlxJsnd1GuN1wdu3a.wX0U3TSDO",
+    "role": "STUDENT",
+    "bureauCode": null,
+    "region": null,
+    "active": 1
+  },
+  {
     "username": "system",
     "fullName": "Automated AICTE Escalation Bot",
     "passwordHash": "!LOCKED_SYSTEM_ACCOUNT!_NON_LOGIN_RANDOM_SECRET_HASH",

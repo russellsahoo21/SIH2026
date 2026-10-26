@@ -1,5 +1,5 @@
 import { useLanguage } from '../i18n/Language';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
 import {
   User, FolderPlus, RefreshCw, AlertTriangle, GitMerge, Search,
@@ -12,7 +12,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
   const [cases, setCases] = useState([]);
   const [totalCases, setTotalCases] = useState(0);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize] = useState(10);
   const [loading, setLoading] = useState(true);
 
   // Filters matching Slide 1
@@ -21,7 +21,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
   const [statusFilter, setStatusFilter] = useState('');
   const [dueFilter, setDueFilter] = useState(''); // 'overdue'
 
-  const fetchDashboardData = async () => {
+  const fetchDashboardData = useCallback(async () => {
     setLoading(true);
     try {
       // 1. Fetch Summary KPIs from DB
@@ -51,11 +51,11 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, pageSize, searchQuery, categoryFilter, statusFilter, dueFilter, user]);
 
   useEffect(() => {
     fetchDashboardData();
-  }, [page, pageSize, categoryFilter, statusFilter, dueFilter, refreshTrigger, user?.username]);
+  }, [fetchDashboardData, refreshTrigger]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -74,15 +74,20 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
   const totalPages = Math.ceil(totalCases / pageSize) || 1;
 
   // Real-time formatted timestamp
-  const loginTimeDisplay = new Date().toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric'
-  }) + ', ' + new Date().toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
+  const [loginTimeDisplay] = useState(() => {
+    const now = new Date();
+    return now.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    }) + ', ' + now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
   });
+
+  const [todayIso] = useState(() => new Date().toISOString().slice(0, 10));
 
   return (
     <div>
@@ -255,7 +260,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                 </tr>
               ) : (
                 cases.map((c) => {
-                  const isOverdue = c.slaState === 'OVERDUE' || (new Date(c.dueOn) < new Date() && c.status !== 'DISPOSED');
+                  const isOverdue = c.slaState === 'OVERDUE' || (c.dueOn && c.dueOn < todayIso && c.status !== 'DISPOSED');
                   const officerDisplayName = c.officer?.name || c.officerName || c.assignedOfficerName || '— Unassigned —';
                   return (
                     <tr key={c.id}>

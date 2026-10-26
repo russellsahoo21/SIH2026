@@ -31,6 +31,7 @@ export default function Login({ onLoginSuccess, onRegister }) {
     else if (selectedRole === 'COORDINATOR') setUsername('coordinator');
     else if (selectedRole === 'MANAGEMENT') setUsername('management');
     else if (selectedRole === 'ADMIN') setUsername('admin');
+    else if (selectedRole === 'STUDENT') setUsername('student');
   };
 
   const handleSubmit = async (e) => {
@@ -154,7 +155,7 @@ export default function Login({ onLoginSuccess, onRegister }) {
               {t("Demo Roles & Fast-Fill")}
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'].map((r) => (
+              {['OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN', 'STUDENT'].map((r) => (
                 <button
                   key={r}
                   type="button"

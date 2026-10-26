@@ -36,6 +36,7 @@ export async function seedInitial() {
     { username: 'coordinator', fullName: 'Coordination Desk', role: 'COORDINATOR', bureau: null, region: null, pass: passwordHash },
     { username: 'management', fullName: 'Senior Management Desk', role: 'MANAGEMENT', bureau: null, region: null, pass: passwordHash },
     { username: 'admin', fullName: 'System Administrator', role: 'ADMIN', bureau: null, region: null, pass: passwordHash },
+    { username: 'student', fullName: 'Demo Student', role: 'STUDENT', bureau: null, region: null, pass: passwordHash },
     { username: 'system', fullName: 'System Automated Account', role: 'ADMIN', bureau: null, region: null, pass: systemPasswordHash }
   ];
 
