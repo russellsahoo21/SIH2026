@@ -40,7 +40,7 @@ export async function getDashboardWorkload(user) {
   await runEscalations();
 
   // If HEAD, scope to own bureau
-  const bureauScope = user.role === 'HEAD' ? user.bureau : null;
+  const bureauScope = ['OFFICER','HEAD'].includes(user.role) ? user.bureau : null;
   return await dashboardRepo.getWorkload(bureauScope);
 }
 

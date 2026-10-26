@@ -31,21 +31,21 @@ router.get(
 // GET /api/dashboard/workload (HEAD, MANAGEMENT, ADMIN)
 router.get(
   '/workload',
-  requireRole('HEAD', 'MANAGEMENT', 'ADMIN'),
+  requireRole('OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'),
   getWorkload
 );
 
 // GET /api/dashboard/ageing (MANAGEMENT, HEAD, COORDINATOR)
 router.get(
   '/ageing',
-  requireRole('MANAGEMENT', 'HEAD', 'COORDINATOR'),
+  requireRole('OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'),
   getAgeing
 );
 
 // GET /api/dashboard/top-overdue (MANAGEMENT, HEAD, COORDINATOR)
 router.get(
   '/top-overdue',
-  requireRole('MANAGEMENT', 'HEAD', 'COORDINATOR'),
+  requireRole('OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'),
   validate({ query: topOverdueQuerySchema }),
   getTopOverdue
 );
@@ -53,7 +53,7 @@ router.get(
 // GET /api/dashboard/monthly-disposal (MANAGEMENT, ADMIN)
 router.get(
   '/monthly-disposal',
-  requireRole('MANAGEMENT', 'ADMIN'),
+  requireRole('OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'),
   validate({ query: monthlyDisposalQuerySchema }),
   getMonthlyDisposal
 );

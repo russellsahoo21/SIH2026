@@ -14,22 +14,26 @@ export default function ManagementDashboard({ onViewCase }) {
   const [topOverdue, setTopOverdue] = useState([]);
   const [monthlyDisposal, setMonthlyDisposal] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('All India');
+  const [monthlyError, setMonthlyError] = useState('');
+  const [overdueError, setOverdueError] = useState('');
+  const [workloadError, setWorkloadError] = useState('');
+  const reportYear = new Date().getFullYear();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [nowTimestamp] = useState(() => Date.now());
 
   useEffect(() => {
     async function loadDashboard() {
-      setLoading(true);setError('');
+      setLoading(true);setError('');setMonthlyError('');setOverdueError('');setWorkloadError('');
       try {
         const regionParam = selectedRegion !== 'All India' ? { region: selectedRegion } : {};
         const [sumRes, workRes, , overdueRes, , dispRes] = await Promise.all([
           api.getDashboardSummary(regionParam),
-          api.getWorkload().catch(() => ({ data: { byBureau: [] } })),
+          api.getWorkload().catch(err => {setWorkloadError(err.message);return {data:{byBureau:[]}};}),
           api.getAgeing().catch(() => ({ data: { bands: {} } })),
-          api.getTopOverdue(10).catch(() => ({ data: [] })),
+          api.getTopOverdue(10).catch(err => {setOverdueError(err.message);return {data:[]};}),
           api.getRegionSummary().catch(() => ({ data: [] })),
-          api.getMonthlyDisposal(2026).catch(() => ({ data: [] }))
+          api.getMonthlyDisposal(reportYear).catch(err => {setMonthlyError(err.message);return {data:[]};})
         ]);
 
         setSummary(sumRes.data);
@@ -58,9 +62,7 @@ export default function ManagementDashboard({ onViewCase }) {
   }
 
   // Workload data strictly from PostgreSQL
-  const bureausData = workload?.byBureau?.length > 0 ? workload.byBureau : [
-    { bureau_code: 'RB', count: summary?.byStatus ? Object.values(summary.byStatus).reduce((a, b) => a + b, 0) : 0 }
-  ];
+  const bureausData = workload?.byBureau || [];
   const maxWorkload = Math.max(...bureausData.map(b => b.count || b.open_cases || 1), 1);
 
   // Dynamic monthly disposal bars
@@ -244,6 +246,7 @@ export default function ManagementDashboard({ onViewCase }) {
           <h4 style={{ fontSize: '15px', color: '#0A3663', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '16px' }}>
             Workload per Bureau (Open Cases)
           </h4>
+          {workloadError && <p role="alert" className="portal-error">{workloadError}</p>}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', height: '180px', justifyContent: 'center' }}>
             {bureausData.map((b) => {
               const bCode = b.bureau_code || b.bureauCode || b.bureau;
@@ -272,8 +275,9 @@ export default function ManagementDashboard({ onViewCase }) {
         {/* Card 3: Monthly Disposal Trend (Live from DB) */}
         <div className="gov-table-card" style={{ padding: '20px' }}>
           <h4 style={{ fontSize: '15px', color: '#0A3663', fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: '16px' }}>
-            Monthly Disposal Trend
+            Monthly Disposal Trend · {reportYear}
           </h4>
+          {monthlyError ? <p role="alert" className="portal-error">Monthly data could not be loaded: {monthlyError}</p> : monthlyDisposal.every(row => Number(row.count) === 0) && <p>No cases disposed in {reportYear}.</p>}
           <div style={{
             height: '180px',
             display: 'flex',
@@ -282,8 +286,8 @@ export default function ManagementDashboard({ onViewCase }) {
             gap: '12px',
             paddingTop: '20px'
           }}>
-            {recentMonths.map(col => {
-              const h = Math.max(14, Math.round((col.c / maxDisposal) * 100));
+            {!monthlyError && recentMonths.map(col => {
+              const h = Math.round((col.c / maxDisposal) * 100);
               return (
                 <div key={col.m} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
                   <span style={{ fontSize: '11px', fontWeight: 700, color: '#0A3663' }}>{col.c}</span>
@@ -326,7 +330,7 @@ export default function ManagementDashboard({ onViewCase }) {
               </tr>
             </thead>
             <tbody>
-              {topOverdue.length === 0 ? (
+              {overdueError ? <tr><td colSpan="7" role="alert" className="portal-error">Overdue data could not be loaded: {overdueError}</td></tr> : topOverdue.length === 0 ? (
                 <tr>
                   <td colSpan="7" style={{ textAlign: 'center', padding: '24px', color: '#64748B' }}>
                     No overdue cases found. All cases within SLA!
