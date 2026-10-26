@@ -110,3 +110,7 @@ CREATE TABLE IF NOT EXISTS sla_config (
   updated_by  INTEGER REFERENCES users(id),
   updated_at  TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Add student accounts without changing existing users or cases.
+ALTER TABLE users DROP CONSTRAINT IF EXISTS users_role_check;
+ALTER TABLE users ADD CONSTRAINT users_role_check CHECK (role IN ('STUDENT','COLLEGE','OFFICER','HEAD','COORDINATOR','MANAGEMENT','ADMIN'));

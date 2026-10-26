@@ -1,5 +1,5 @@
 // Roles and bureaus
-export const ROLES = ['OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'];
+export const ROLES = ['STUDENT', 'COLLEGE', 'OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'];
 
 export const BUREAUS = ['RB', 'PGRC', 'RO', 'CELL'];
 

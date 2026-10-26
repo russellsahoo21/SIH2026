@@ -1,11 +1,13 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
-import { 
-  FolderPlus, RefreshCw, AlertTriangle, GitMerge, Search, 
-  RotateCcw, Eye, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight 
+import {
+  User, FolderPlus, RefreshCw, AlertTriangle, GitMerge, Search,
+  RotateCcw, Eye, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight
 } from 'lucide-react';
 
 export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewInstitution }) {
+ const { t } = useLanguage();
   const [summary, setSummary] = useState(null);
   const [cases, setCases] = useState([]);
   const [totalCases, setTotalCases] = useState(0);
@@ -88,7 +90,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
       <div className="welcome-banner">
         <div className="welcome-info">
           <div className="welcome-name">
-            <span style={{ fontSize: '18px' }}>👤</span>
+            <span style={{ fontSize: '18px' }}><User size={18} /></span>
             <span>Welcome, {user?.fullName || user?.username || 'Officer'}</span>
           </div>
           <div className="welcome-meta">
@@ -113,7 +115,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             <FolderPlus size={24} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">New Cases</span>
+            <span className="kpi-label">{t("New Cases")}</span>
             <span className="kpi-value">{summary?.byStatus?.NEW || 0}</span>
           </div>
         </div>
@@ -123,7 +125,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             <RefreshCw size={24} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Under Process</span>
+            <span className="kpi-label">{t("Under Process")}</span>
             <span className="kpi-value">{summary?.byStatus?.UNDER_PROCESS || 0}</span>
           </div>
         </div>
@@ -133,7 +135,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             <AlertTriangle size={24} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Overdue Cases</span>
+            <span className="kpi-label">{t("Overdue Cases")}</span>
             <span className="kpi-value">{summary?.overdue || 0}</span>
           </div>
         </div>
@@ -143,7 +145,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             <GitMerge size={24} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Overlap Alerts</span>
+            <span className="kpi-label">{t("Overlap Alerts")}</span>
             <span className="kpi-value">{summary?.openOverlapGroups || 0}</span>
           </div>
         </div>
@@ -175,14 +177,14 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             value={categoryFilter}
             onChange={(e) => { setCategoryFilter(e.target.value); setPage(1); }}
           >
-            <option value="">All Categories</option>
-            <option value="FEES">Fees & Refund</option>
-            <option value="INTAKE">Seat Intake</option>
-            <option value="FACULTY">Faculty Shortage</option>
-            <option value="INFRASTRUCTURE">Infrastructure</option>
-            <option value="RAGGING">Anti-Ragging</option>
-            <option value="NORM_VIOLATION">Norm Violation</option>
-            <option value="OTHER">Other Issues</option>
+            <option value="">{t("All Categories")}</option>
+            <option value="FEES">{t("Fees & Refund")}</option>
+            <option value="INTAKE">{t("Seat Intake")}</option>
+            <option value="FACULTY">{t("Faculty Shortage")}</option>
+            <option value="INFRASTRUCTURE">{t("Infrastructure")}</option>
+            <option value="RAGGING">{t("Anti-Ragging")}</option>
+            <option value="NORM_VIOLATION">{t("Norm Violation")}</option>
+            <option value="OTHER">{t("Other Issues")}</option>
           </select>
 
           <select
@@ -190,13 +192,13 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             value={statusFilter}
             onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}
           >
-            <option value="">All Status</option>
-            <option value="NEW">New</option>
-            <option value="UNDER_PROCESS">Under Process</option>
-            <option value="PENDING">Pending</option>
-            <option value="ESCALATED">Escalated</option>
-            <option value="TRANSFERRED">Transferred</option>
-            <option value="DISPOSED">Disposed</option>
+            <option value="">{t("All Status")}</option>
+            <option value="NEW">{t("New")}</option>
+            <option value="UNDER_PROCESS">{t("Under Process")}</option>
+            <option value="PENDING">{t("Pending")}</option>
+            <option value="ESCALATED">{t("Escalated")}</option>
+            <option value="TRANSFERRED">{t("Transferred")}</option>
+            <option value="DISPOSED">{t("Disposed")}</option>
           </select>
 
           <select
@@ -204,21 +206,21 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             value={dueFilter}
             onChange={(e) => { setDueFilter(e.target.value); setPage(1); }}
           >
-            <option value="">Due in: All</option>
-            <option value="overdue">Overdue SLA</option>
+            <option value="">{t("Due in: All")}</option>
+            <option value="overdue">{t("Overdue SLA")}</option>
           </select>
 
           <button type="submit" className="gov-btn gov-btn-primary">
-            Search
+            {t("Search")}
           </button>
 
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={handleResetFilters}
             className="gov-btn gov-btn-secondary"
             title="Reset Filters"
           >
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {t("Reset")}
           </button>
         </form>
       </div>
@@ -235,7 +237,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                 <th>Status ⇅</th>
                 <th>Assigned Officer ⇅</th>
                 <th>Due Date ⇅</th>
-                <th style={{ textAlign: 'center' }}>Action</th>
+                <th style={{ textAlign: 'center' }}>{t("Action")}</th>
               </tr>
             </thead>
             <tbody>
@@ -258,7 +260,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                   return (
                     <tr key={c.id}>
                       <td>
-                        <span 
+                        <span
                           className="case-id-link"
                           onClick={() => onViewCase(c.id)}
                         >
@@ -266,7 +268,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                         </span>
                       </td>
                       <td>
-                        <span 
+                        <span
                           style={{ cursor: 'pointer', fontWeight: 600, color: '#1E293B' }}
                           onClick={() => onViewInstitution(c.institutionId)}
                           title="Click to view institution profile"
@@ -295,10 +297,10 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                         </span>
                       </td>
                       <td>
-                        <span style={{ 
-                          fontSize: '12px', 
+                        <span style={{
+                          fontSize: '12px',
                           fontWeight: isOverdue ? 700 : 500,
-                          color: isOverdue ? '#C62828' : '#334155' 
+                          color: isOverdue ? '#C62828' : '#334155'
                         }}>
                           {c.dueOn ? new Date(c.dueOn).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '—'}
                         </span>
@@ -309,7 +311,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                           className="gov-btn gov-btn-outline"
                           style={{ padding: '4px 14px', fontSize: '12px' }}
                         >
-                          <Eye size={13} /> View
+                          <Eye size={13} /> {t("View")}
                         </button>
                       </td>
                     </tr>
@@ -329,7 +331,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span>Rows per page:</span>
+              <span>{t("Rows per page:")}</span>
               <select
                 className="gov-select"
                 style={{ width: 'auto', padding: '4px 8px' }}
@@ -344,7 +346,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
             </div>
 
             <div className="pagination-controls">
-              <button 
+              <button
                 className="page-btn"
                 disabled={page <= 1}
                 onClick={() => setPage(1)}
@@ -352,7 +354,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
               >
                 <ChevronsLeft size={14} />
               </button>
-              <button 
+              <button
                 className="page-btn"
                 disabled={page <= 1}
                 onClick={() => setPage(p => p - 1)}
@@ -371,7 +373,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
                 </button>
               )}
 
-              <button 
+              <button
                 className="page-btn"
                 disabled={page >= totalPages}
                 onClick={() => setPage(p => p + 1)}
@@ -379,7 +381,7 @@ export default function OfficerHome({ user, refreshTrigger, onViewCase, onViewIn
               >
                 <ChevronRight size={14} />
               </button>
-              <button 
+              <button
                 className="page-btn"
                 disabled={page >= totalPages}
                 onClick={() => setPage(totalPages)}

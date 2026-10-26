@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { 
@@ -6,6 +7,7 @@ import {
 } from 'lucide-react';
 
 export default function InstitutionProfile({ institutionId, onBack, onViewCase }) {
+ const { t } = useLanguage();
   const [inst, setInst] = useState(null);
   const [cases, setCases] = useState([]);
   const [overlaps, setOverlaps] = useState([]);
@@ -36,14 +38,14 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
   }, [institutionId]);
 
   if (loading) {
-    return <div style={{ padding: '40px', textAlign: 'center', color: '#64748B' }}>Loading Institution Profile...</div>;
+    return <div style={{ padding: '40px', textAlign: 'center', color: '#64748B' }}>{t("Loading Institution Profile...")}</div>;
   }
 
   if (!inst) {
     return (
       <div style={{ padding: '40px', textAlign: 'center' }}>
-        <p>Institution not found.</p>
-        <button onClick={onBack} className="gov-btn gov-btn-secondary" style={{ marginTop: '12px' }}>Go Back</button>
+        <p>{t("Institution not found.")}</p>
+        <button onClick={onBack} className="gov-btn gov-btn-secondary" style={{ marginTop: '12px' }}>{t("Go Back")}</button>
       </div>
     );
   }
@@ -60,9 +62,9 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
     <div>
       {/* Breadcrumb */}
       <div style={{ fontSize: '13px', color: '#64748B', marginBottom: '16px' }}>
-        <span style={{ cursor: 'pointer', color: '#0A3663' }} onClick={onBack}>Home</span> &gt;{' '}
-        <span style={{ cursor: 'pointer', color: '#0A3663' }} onClick={onBack}>Institutions</span> &gt;{' '}
-        <strong>Institution Profile</strong>
+        <span style={{ cursor: 'pointer', color: '#0A3663' }} onClick={onBack}>{t("Home")}</span> &gt;{' '}
+        <span style={{ cursor: 'pointer', color: '#0A3663' }} onClick={onBack}>{t("Institutions")}</span> &gt;{' '}
+        <strong>{t("Institution Profile")}</strong>
       </div>
 
       {/* Main Profile Header Banner (Slide 4 Mockup) */}
@@ -144,7 +146,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
             <Building2 size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Total Cases</span>
+            <span className="kpi-label">{t("Total Cases")}</span>
             <span className="kpi-value">{inst.caseCounts?.total || cases.length}</span>
           </div>
         </div>
@@ -154,7 +156,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
             <Clock size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Open Cases</span>
+            <span className="kpi-label">{t("Open Cases")}</span>
             <span className="kpi-value">{inst.caseCounts?.open || 0}</span>
           </div>
         </div>
@@ -164,7 +166,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
             <CheckCircle size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Disposed Cases</span>
+            <span className="kpi-label">{t("Disposed Cases")}</span>
             <span className="kpi-value">{inst.caseCounts?.disposed || 0}</span>
           </div>
         </div>
@@ -174,7 +176,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
             <ShieldAlert size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Overdue Cases</span>
+            <span className="kpi-label">{t("Overdue Cases")}</span>
             <span className="kpi-value">{inst.caseCounts?.overdue || 0}</span>
           </div>
         </div>
@@ -207,12 +209,12 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
               >
-                <option value="">All Status</option>
-                <option value="NEW">New</option>
-                <option value="UNDER_PROCESS">Under Process</option>
-                <option value="PENDING">Pending</option>
-                <option value="ESCALATED">Escalated</option>
-                <option value="DISPOSED">Disposed</option>
+                <option value="">{t("All Status")}</option>
+                <option value="NEW">{t("New")}</option>
+                <option value="UNDER_PROCESS">{t("Under Process")}</option>
+                <option value="PENDING">{t("Pending")}</option>
+                <option value="ESCALATED">{t("Escalated")}</option>
+                <option value="DISPOSED">{t("Disposed")}</option>
               </select>
             </div>
           </div>
@@ -227,7 +229,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
                   <th>Status ⇅</th>
                   <th>Assigned Officer ⇅</th>
                   <th>Due Date ⇅</th>
-                  <th style={{ textAlign: 'center' }}>Action</th>
+                  <th style={{ textAlign: 'center' }}>{t("Action")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -264,7 +266,7 @@ export default function InstitutionProfile({ institutionId, onBack, onViewCase }
                           className="gov-btn gov-btn-outline"
                           style={{ padding: '3px 10px', fontSize: '11.5px' }}
                         >
-                          View
+                          {t("View")}
                         </button>
                       </td>
                     </tr>

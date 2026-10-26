@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api, getFullApiUrl } from '../services/api';
 import { 
@@ -6,6 +7,7 @@ import {
 } from 'lucide-react';
 
 export default function ManagementDashboard({ user, onViewCase }) {
+ const { t } = useLanguage();
   const [summary, setSummary] = useState(null);
   const [workload, setWorkload] = useState(null);
   const [ageing, setAgeing] = useState(null);
@@ -81,7 +83,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <div>
           <div style={{ fontSize: '12px', color: '#64748B', marginBottom: '4px' }}>
-            Home &gt; Dashboards &gt; <strong>Senior Management Dashboard</strong>
+            Home &gt; Dashboards &gt; <strong>{t("Senior Management Dashboard")}</strong>
           </div>
           <h2 style={{
             fontSize: '22px',
@@ -93,7 +95,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
             gap: '10px'
           }}>
             <BarChart3 size={24} color="#E65100" />
-            Senior Management Dashboard
+            {t("Senior Management Dashboard")}
           </h2>
         </div>
 
@@ -107,7 +109,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
             >
-              <option value="All India">All India</option>
+              <option value="All India">{t("All India")}</option>
               <option value="North">North Region</option>
               <option value="South">South Region</option>
               <option value="East">East Region</option>
@@ -129,7 +131,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
             <BarChart3 size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Total Cases</span>
+            <span className="kpi-label">{t("Total Cases")}</span>
             <span className="kpi-value">{summary?.total || 0}</span>
           </div>
         </div>
@@ -149,7 +151,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
             <TrendingUp size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Under Process</span>
+            <span className="kpi-label">{t("Under Process")}</span>
             <span className="kpi-value">{summary?.byStatus?.UNDER_PROCESS || 0}</span>
           </div>
         </div>
@@ -159,7 +161,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
             <AlertOctagon size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Escalated</span>
+            <span className="kpi-label">{t("Escalated")}</span>
             <span className="kpi-value">{summary?.byStatus?.ESCALATED || 0}</span>
           </div>
         </div>
@@ -169,7 +171,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
             <CheckCircle size={22} />
           </div>
           <div className="kpi-content">
-            <span className="kpi-label">Disposed</span>
+            <span className="kpi-label">{t("Disposed")}</span>
             <span className="kpi-value">{summary?.byStatus?.DISPOSED || 0}</span>
           </div>
         </div>
@@ -320,7 +322,7 @@ export default function ManagementDashboard({ user, onViewCase }) {
                 <th>Category ⇅</th>
                 <th>Due Date ⇅</th>
                 <th>Days Overdue ⇅</th>
-                <th style={{ textAlign: 'center' }}>Action</th>
+                <th style={{ textAlign: 'center' }}>{t("Action")}</th>
               </tr>
             </thead>
             <tbody>

@@ -1,44 +1,46 @@
+import { useLanguage } from '../i18n/Language';
 import React from 'react';
 import { PhoneCall } from 'lucide-react';
 
 export default function Footer() {
+ const { t } = useLanguage();
   return (
     <footer className="gov-footer">
       <div className="footer-columns">
         <div className="footer-col">
-          <h4>Quick Links</h4>
+          <h4>{t("Quick Links")}</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About the Portal</a></li>
-            <li><a href="#manual">User Manual & Standard Operating Procedures</a></li>
-            <li><a href="#analytics">Reports & National Analytics</a></li>
+            <li><a href="#home">{t("Home")}</a></li>
+            <li><a href="#about">{t("About the Portal")}</a></li>
+            <li><a href="#manual">{t("User Manual & Standard Operating Procedures")}</a></li>
+            <li><a href="#analytics">{t("Reports & National Analytics")}</a></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Important Links</h4>
+          <h4>{t("Important Links")}</h4>
           <ul>
-            <li><a href="https://www.aicte-india.org" target="_blank" rel="noreferrer">AICTE Official Portal</a></li>
-            <li><a href="https://pgportal.gov.in" target="_blank" rel="noreferrer">CPGRAMS Central Grievance</a></li>
-            <li><a href="https://www.mygov.in" target="_blank" rel="noreferrer">MyGov India</a></li>
-            <li><a href="https://www.digitalindia.gov.in" target="_blank" rel="noreferrer">Digital India Initiative</a></li>
+            <li><a href="https://www.aicte-india.org" target="_blank" rel="noreferrer">{t("AICTE Official Portal")}</a></li>
+            <li><a href="https://pgportal.gov.in" target="_blank" rel="noreferrer">{t("CPGRAMS Central Grievance")}</a></li>
+            <li><a href="https://www.mygov.in" target="_blank" rel="noreferrer">{t("MyGov India")}</a></li>
+            <li><a href="https://www.digitalindia.gov.in" target="_blank" rel="noreferrer">{t("Digital India Initiative")}</a></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Support & Compliance</h4>
+          <h4>{t("Support & Compliance")}</h4>
           <ul>
-            <li><a href="#contact">Contact AICTE Nodal Bureau</a></li>
-            <li><a href="#faq">Frequently Asked Questions (FAQs)</a></li>
-            <li><a href="#browser">Browser Compatibility & Security</a></li>
-            <li><a href="#accessibility">Accessibility Statement (GIGW Compliant)</a></li>
+            <li><a href="#contact">{t("Contact AICTE Nodal Bureau")}</a></li>
+            <li><a href="#faq">{t("Frequently Asked Questions (FAQs)")}</a></li>
+            <li><a href="#browser">{t("Browser Compatibility & Security")}</a></li>
+            <li><a href="#accessibility">{t("Accessibility Statement (GIGW Compliant)")}</a></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Helpdesk / Helpline</h4>
+          <h4>{t("Helpdesk / Helpline")}</h4>
           <div className="footer-helpdesk">
-            <div className="phone-icon">🎧</div>
+            <div className="phone-icon"><PhoneCall size={24} /></div>
             <div className="helpdesk-text">
               <div style={{ fontSize: '12px', color: '#CBD5E1' }}>Toll Free AICTE Grievance:</div>
               <div className="toll-free">1800-11-5566</div>
@@ -56,7 +58,7 @@ export default function Footer() {
         </div>
         <div className="digital-india-badge">
           <span className="proto-tag">SIH 2026 Prototype (SIH26264)</span>
-          <span style={{ fontWeight: 700, color: '#FF9933' }}>Digital India</span>
+          <span style={{ fontWeight: 700, color: '#FF9933' }}>{t("Digital India")}</span>
         </div>
       </div>
     </footer>

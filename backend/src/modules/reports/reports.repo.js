@@ -81,9 +81,13 @@ export async function getRegionWiseReport(filters = {}) {
 }
 
 export async function getBureauWiseReport(filters = {}) {
-  const { from, to } = filters;
+  const { bureau, from, to } = filters;
   const conditions = [];
   const params = [];
+  if (bureau) {
+    params.push(bureau);
+    conditions.push(`b.code = $${params.length}`);
+  }
 
   if (from) {
     params.push(from);
@@ -164,7 +168,7 @@ export async function getAgeingReport(filters = {}) {
   return res.rows;
 }
 
-export async function getOverlapsReport() {
+export async function getOverlapsReport(filters = {}) {
   const sql = `
     SELECT
       o.id AS "overlapId",
@@ -178,9 +182,10 @@ export async function getOverlapsReport() {
     FROM "overlaps" o
     JOIN institutions i ON o.institution_id = i.id
     LEFT JOIN overlap_members om ON o.id = om.overlap_id
+    ${filters.bureau ? 'WHERE EXISTS (SELECT 1 FROM overlap_members scoped_member JOIN cases scoped_case ON scoped_case.id = scoped_member.case_id WHERE scoped_member.overlap_id = o.id AND scoped_case.bureau_code = $1)' : ''}
     GROUP BY o.id, i.name, i.permanent_id, o.severity, o.status, o.lead_bureau, o.created_at
     ORDER BY o.id DESC
   `;
-  const res = await query(sql);
+  const res = await query(sql, filters.bureau ? [filters.bureau] : []);
   return res.rows;
 }

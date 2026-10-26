@@ -1,7 +1,9 @@
+import { useLanguage } from '../i18n/Language';
 import React from 'react';
 import { Home, PlusCircle, FolderOpen, Building2, GitMerge, BarChart3, Settings, ShieldAlert } from 'lucide-react';
 
 export default function Sidebar({ activeTab, onTabChange, user }) {
+ const { t } = useLanguage();
   const isOfficerOrHead = user?.role === 'OFFICER' || user?.role === 'HEAD';
   const isManagement = user?.role === 'MANAGEMENT';
   const isCoordinator = user?.role === 'COORDINATOR';
@@ -14,7 +16,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('home')}
         >
           <Home size={18} />
-          <span>Home</span>
+          <span>{t("Home")}</span>
         </li>
 
         {isOfficerOrHead && (
@@ -23,7 +25,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
             onClick={() => onTabChange('register')}
           >
             <PlusCircle size={18} />
-            <span>Register Case</span>
+            <span>{t("Register Case")}</span>
           </li>
         )}
 
@@ -32,7 +34,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('cases')}
         >
           <FolderOpen size={18} />
-          <span>{isOfficerOrHead ? 'My Cases' : 'All Cases'}</span>
+          <span>{isOfficerOrHead ? t("My Cases") : t("All Cases")}</span>
         </li>
 
         <li 
@@ -40,7 +42,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('institutions')}
         >
           <Building2 size={18} />
-          <span>Institutions</span>
+          <span>{t("Institutions")}</span>
         </li>
 
         <li 
@@ -48,8 +50,8 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('overlaps')}
         >
           <GitMerge size={18} />
-          <span>Overlaps</span>
-          <span className="nav-badge">Alerts</span>
+          <span>{t("Overlaps")}</span>
+          <span className="nav-badge">{t("Alerts")}</span>
         </li>
 
         <li 
@@ -57,7 +59,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('dashboards')}
         >
           <BarChart3 size={18} />
-          <span>Dashboards</span>
+          <span>{t("Dashboards")}</span>
         </li>
 
         <li 
@@ -65,7 +67,7 @@ export default function Sidebar({ activeTab, onTabChange, user }) {
           onClick={() => onTabChange('reports')}
         >
           <BarChart3 size={18} />
-          <span>Reports</span>
+          <span>{t("Reports")}</span>
         </li>
       </ul>
 

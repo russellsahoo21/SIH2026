@@ -1,4 +1,7 @@
+import { useLanguage } from './i18n/Language';
 import React, { useState, useEffect } from 'react';
+import StudentPortal from './components/StudentPortal';
+import SignUp from './components/SignUp';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -14,6 +17,8 @@ import CaseDetailModal from './components/CaseDetailModal';
 import { getCurrentUser, clearAuth } from './services/api';
 
 export default function App() {
+  const { t, language } = useLanguage();
+  const [signUp, setSignUp] = useState(false);
   const [user, setUser] = useState(null);
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'register', 'cases', 'institutions', 'overlaps', 'dashboards', 'reports', 'institution-profile'
   const [selectedCaseId, setSelectedCaseId] = useState(null);
@@ -32,7 +37,12 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const names = {home:'Home',cases:'My Cases',register:'Register Case',institutions:'Institutions',overlaps:'Overlap Coordination',dashboards:'Management Dashboard',reports:'Reports', 'institution-profile':'Institution Profile'};
+    document.title = t(user ? (['STUDENT','COLLEGE'].includes(user.role) ? 'My Complaints' : names[activeTab] || 'Portal') : signUp ? 'Account Registration' : 'Login') + (language === 'hi' ? ' | एआईसीटीई शिकायत पोर्टल' : ' | AICTE Complaint Portal');
+  },[user,activeTab,signUp,language]);
   const handleLoginSuccess = (loggedInUser) => {
+    setSignUp(false);
     setUser(loggedInUser);
     setRefreshTrigger(prev => prev + 1);
     if (loggedInUser.role === 'MANAGEMENT') {
@@ -68,21 +78,21 @@ export default function App() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header
+        key={user?.id || 'signed-out'}
         user={user}
         activeTab={activeTab}
         onTabChange={(tab) => {
           setActiveTab(tab);
           if (tab !== 'institution-profile') setSelectedInstitutionId(null);
         }}
+        onViewCase={handleViewCase}
         onLogout={handleLogout}
-        onBackendChange={() => {
-          setRefreshTrigger(prev => prev + 1);
-        }}
+        onBackendChange={handleLogout}
       />
 
       {!user ? (
-        <Login onLoginSuccess={handleLoginSuccess} />
-      ) : (
+        <>{signUp ? <SignUp onLoginSuccess={handleLoginSuccess} onBack={()=>setSignUp(false)}/> : <Login onLoginSuccess={handleLoginSuccess} onRegister={()=>setSignUp(true)}/>}</>
+      ) : ['STUDENT','COLLEGE'].includes(user.role) ? <StudentPortal /> : (
         <div className="portal-layout">
           <Sidebar
             activeTab={activeTab}

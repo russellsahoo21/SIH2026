@@ -1,8 +1,10 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState } from 'react';
 import { api } from '../services/api';
 import { PlusCircle, Sparkles, AlertTriangle, CheckCircle } from 'lucide-react';
 
 export default function RegisterCase({ user, onCaseCreated, onCancel }) {
+ const { t } = useLanguage();
   const [institutionQuery, setInstitutionQuery] = useState('');
   const [description, setDescription] = useState('');
   const [selectedInst, setSelectedInst] = useState(null);
@@ -93,7 +95,7 @@ export default function RegisterCase({ user, onCaseCreated, onCancel }) {
         <div className="gov-filter-header" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <PlusCircle size={22} color="#E65100" />
-            <span>Register New Grievance / Case</span>
+            <span>{t("Register New Grievance / Case")}</span>
           </div>
           <span style={{ fontSize: '12px', color: '#64748B' }}>
             Owning Bureau: <strong>{user?.bureau || 'RB'}</strong> | Officer: <strong>{user?.fullName}</strong>
@@ -232,7 +234,7 @@ export default function RegisterCase({ user, onCaseCreated, onCancel }) {
 
             <div>
               <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                Category
+                {t("Category")}
               </label>
               <select
                 className="gov-select"
@@ -291,7 +293,7 @@ export default function RegisterCase({ user, onCaseCreated, onCancel }) {
               onClick={onCancel}
               className="gov-btn gov-btn-secondary"
             >
-              Cancel
+              {t("Cancel")}
             </button>
             <button
               type="submit"

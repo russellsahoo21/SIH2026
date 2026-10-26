@@ -1,10 +1,12 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState } from 'react';
 import { api, setAuth } from '../services/api';
-import { Lock, User, RefreshCw, Eye, EyeOff, ShieldCheck } from 'lucide-react';
+import { Lock, User, RefreshCw, Eye, EyeOff } from 'lucide-react';
 
-export default function Login({ onLoginSuccess }) {
-  const [username, setUsername] = useState('officer.rb1');
-  const [password, setPassword] = useState('Demo@123');
+export default function Login({ onLoginSuccess, onRegister }) {
+ const { t } = useLanguage();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [role, setRole] = useState('OFFICER');
   const [captchaInput, setCaptchaInput] = useState('');
   const [captchaCode, setCaptchaCode] = useState('7K4P9');
@@ -23,6 +25,7 @@ export default function Login({ onLoginSuccess }) {
 
   const handleRolePreset = (selectedRole) => {
     setRole(selectedRole);
+    setPassword('Demo@123');
     if (selectedRole === 'OFFICER') setUsername('officer.rb1');
     else if (selectedRole === 'HEAD') setUsername('head.rb');
     else if (selectedRole === 'COORDINATOR') setUsername('coordinator');
@@ -113,7 +116,7 @@ export default function Login({ onLoginSuccess }) {
               fontWeight: '600',
               marginBottom: '20px'
             }}>
-              <ShieldCheck size={14} /> Official Government of India Portal
+              AICTE Grievance Portal · SIH Prototype
             </div>
 
             <h2 style={{
@@ -125,7 +128,7 @@ export default function Login({ onLoginSuccess }) {
               paddingLeft: '16px',
               marginBottom: '18px'
             }}>
-              Integrated Complaint Monitoring Dashboard
+              {t("Integrated Complaint Monitoring Dashboard")}
             </h2>
 
             <p style={{
@@ -135,7 +138,7 @@ export default function Login({ onLoginSuccess }) {
               maxWidth: '460px',
               marginBottom: '32px'
             }}>
-              A digital platform for time-bound, transparent, and accountable grievance redressal across AICTE bureaus, cells, and regional offices.
+              {t("A digital platform for time-bound, transparent, and accountable grievance redressal across AICTE bureaus, cells, and regional offices.")}
             </p>
           </div>
 
@@ -148,7 +151,7 @@ export default function Login({ onLoginSuccess }) {
             fontSize: '12.5px'
           }}>
             <div style={{ fontWeight: 700, color: '#FFB870', marginBottom: '8px' }}>
-              ⚡ Demo Roles & Fast-Fill
+              {t("Demo Roles & Fast-Fill")}
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {['OFFICER', 'HEAD', 'COORDINATOR', 'MANAGEMENT', 'ADMIN'].map((r) => (
@@ -177,7 +180,7 @@ export default function Login({ onLoginSuccess }) {
           </div>
         </div>
 
-        {/* Right Side: Officer Login Form (Matching Slide 2) */}
+        {/* Right Side: Portal Login Form (Matching Slide 2) */}
         <div style={{
           background: '#FFFFFF',
           padding: '40px 36px',
@@ -194,7 +197,7 @@ export default function Login({ onLoginSuccess }) {
               position: 'relative',
               display: 'inline-block'
             }}>
-              Officer Login
+              {t("Portal Login")}
               <span style={{
                 position: 'absolute',
                 bottom: '-4px',
@@ -205,7 +208,7 @@ export default function Login({ onLoginSuccess }) {
               }} />
             </h3>
             <p style={{ fontSize: '13px', color: '#64748B', marginTop: '8px' }}>
-              Enter your credentials to access the internal redressal portal
+              {t("Sign in to your student, college or staff account")}
             </p>
           </div>
 
@@ -224,9 +227,10 @@ export default function Login({ onLoginSuccess }) {
           )}
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                Username / Officer ID
+                {t("Username")}
               </label>
               <div className="input-with-icon">
                 <User size={16} />
@@ -234,7 +238,7 @@ export default function Login({ onLoginSuccess }) {
                   type="text"
                   required
                   className="gov-input"
-                  placeholder="Enter Username"
+                  placeholder={t("Enter Username")} autoComplete="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -243,7 +247,7 @@ export default function Login({ onLoginSuccess }) {
 
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                Password
+                {t("Password")}
               </label>
               <div className="input-with-icon" style={{ position: 'relative' }}>
                 <Lock size={16} />
@@ -251,7 +255,7 @@ export default function Login({ onLoginSuccess }) {
                   type={showPassword ? 'text' : 'password'}
                   required
                   className="gov-input"
-                  placeholder="Enter Password"
+                  placeholder={t("Enter Password")} autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -272,27 +276,10 @@ export default function Login({ onLoginSuccess }) {
               </div>
             </div>
 
-            <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                Designated Role
-              </label>
-              <select
-                className="gov-select"
-                value={role}
-                onChange={(e) => handleRolePreset(e.target.value)}
-              >
-                <option value="OFFICER">Bureau Officer (OFFICER)</option>
-                <option value="HEAD">Bureau Head (HEAD)</option>
-                <option value="COORDINATOR">Case Coordinator (COORDINATOR)</option>
-                <option value="MANAGEMENT">Senior Management (MANAGEMENT)</option>
-                <option value="ADMIN">System Administrator (ADMIN)</option>
-              </select>
-            </div>
-
             {/* Visual Gov Security Captcha Box */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                Security Verification
+                {t("Security Verification")}
               </label>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <div style={{
@@ -322,7 +309,7 @@ export default function Login({ onLoginSuccess }) {
                 <input
                   type="text"
                   required
-                  placeholder="Enter Captcha"
+                  placeholder={t("Enter Captcha")}
                   className="gov-input"
                   value={captchaInput}
                   onChange={(e) => setCaptchaInput(e.target.value)}
@@ -343,12 +330,13 @@ export default function Login({ onLoginSuccess }) {
                 fontWeight: 700
               }}
             >
-              {loading ? 'Authenticating...' : 'Login'}
+              {loading ? t("Authenticating...") : t("Login")}
             </button>
 
             <div style={{ textAlign: 'center', marginTop: '8px' }}>
+              <button type="button" className="login-register-link" onClick={onRegister}>{t("Register student / college account")}</button>
               <a href="#forgot" onClick={(e) => { e.preventDefault(); alert('Please contact AICTE IT Helpdesk at helpdesk@aicte-india.org to reset password.'); }} style={{ fontSize: '12px', color: '#0A3663', textDecoration: 'none', fontWeight: 600 }}>
-                Forgot Password?
+                {t("Forgot Password?")}
               </a>
             </div>
           </form>

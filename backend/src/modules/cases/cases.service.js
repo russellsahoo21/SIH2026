@@ -260,6 +260,9 @@ export async function changeStatus(caseId, toStatus, remark, actor, version) {
     throw new ApiError(403, 'FORBIDDEN', 'Only officers or head of owning bureau can change case status');
   }
 
+  if (current.status === 'DISPOSED' && !['HEAD','ADMIN'].includes(actor.role)) {
+    throw new ApiError(403, 'FORBIDDEN', 'Only Bureau Head or Admin can reopen a case');
+  }
   const allowed = TRANSITIONS[current.status] || [];
   if (!allowed.includes(toStatus)) {
     throw new ApiError(409, 'INVALID_TRANSITION', `Cannot move status from ${current.status} to ${toStatus}`);
@@ -269,6 +272,12 @@ export async function changeStatus(caseId, toStatus, remark, actor, version) {
     throw new ApiError(403, 'FORBIDDEN', `Transition to ${toStatus} requires HEAD role`);
   }
 
+  if (current.status === 'DISPOSED') {
+    return reopenCase(caseId, remark, actor, version);
+  }
+  if (current.status === 'TRANSFERRED') {
+    throw new ApiError(409, 'INVALID_TRANSITION', 'Use the accept-transfer action');
+  }
   const updates = { status: toStatus };
   if (toStatus === 'DISPOSED') {
     updates.disposed_on = new Date().toISOString().slice(0, 10);

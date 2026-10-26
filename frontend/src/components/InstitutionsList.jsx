@@ -1,8 +1,10 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { Building2, Search, MapPin, Eye, ChevronsLeft, ChevronLeft, ChevronRight, ChevronsRight } from 'lucide-react';
 
 export default function InstitutionsList({ onSelectInstitution }) {
+ const { t } = useLanguage();
   const [institutions, setInstitutions] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -80,12 +82,12 @@ export default function InstitutionsList({ onSelectInstitution }) {
             value={regionFilter}
             onChange={(e) => { setRegionFilter(e.target.value); setPage(1); }}
           >
-            <option value="">All Regions</option>
-            <option value="North">North</option>
-            <option value="South">South</option>
-            <option value="East">East</option>
-            <option value="West">West</option>
-            <option value="Central">Central</option>
+            <option value="">{t("All Regions")}</option>
+            <option value="North">{t("North")}</option>
+            <option value="South">{t("South")}</option>
+            <option value="East">{t("East")}</option>
+            <option value="West">{t("West")}</option>
+            <option value="Central">{t("Central")}</option>
           </select>
 
           <button type="submit" className="gov-btn gov-btn-primary">
@@ -100,11 +102,11 @@ export default function InstitutionsList({ onSelectInstitution }) {
           <table className="gov-data-table">
             <thead>
               <tr>
-                <th>Permanent ID</th>
-                <th>Institution Name</th>
-                <th>Region</th>
-                <th>Address</th>
-                <th style={{ textAlign: 'center' }}>Action</th>
+                <th>{t("Permanent ID")}</th>
+                <th>{t("Institution Name")}</th>
+                <th>{t("Region")}</th>
+                <th>{t("Address")}</th>
+                <th style={{ textAlign: 'center' }}>{t("Action")}</th>
               </tr>
             </thead>
             <tbody>

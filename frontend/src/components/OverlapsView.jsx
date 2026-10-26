@@ -1,8 +1,10 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { GitMerge, Link2, ShieldAlert, CheckCircle, Search, Eye } from 'lucide-react';
 
 export default function OverlapsView({ onViewCase }) {
+ const { t } = useLanguage();
   const [overlaps, setOverlaps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedOverlap, setSelectedOverlap] = useState(null);
@@ -77,9 +79,9 @@ export default function OverlapsView({ onViewCase }) {
 
           <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
             {loading ? (
-              <div style={{ padding: '30px', textAlign: 'center', color: '#64748B' }}>Scanning for overlaps...</div>
+              <div style={{ padding: '30px', textAlign: 'center', color: '#64748B' }}>{t("Scanning for overlaps...")}</div>
             ) : overlaps.length === 0 ? (
-              <div style={{ padding: '30px', textAlign: 'center', color: '#64748B' }}>No active overlap groups found.</div>
+              <div style={{ padding: '30px', textAlign: 'center', color: '#64748B' }}>{t("No active overlap groups found.")}</div>
             ) : (
               overlaps.map(o => (
                 <div

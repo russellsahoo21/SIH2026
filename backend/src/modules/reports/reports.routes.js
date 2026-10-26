@@ -9,10 +9,10 @@ const router = Router();
 
 router.use(authenticate);
 
-// GET /api/reports/:type (MANAGEMENT, HEAD, ADMIN)
+// GET /api/reports/:type (all staff roles)
 router.get(
   '/:type',
-  requireRole('MANAGEMENT', 'HEAD', 'ADMIN'),
+  requireRole('OFFICER', 'COORDINATOR', 'MANAGEMENT', 'HEAD', 'ADMIN'),
   validate({ params: reportParamsSchema, query: reportQuerySchema }),
   getReport
 );

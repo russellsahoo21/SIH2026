@@ -7,6 +7,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 import { sendSuccess } from './utils/response.js';
 
 // Route modules owned by Dev A
+import studentRoutes from './modules/student/student.routes.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import bureausRoutes from './modules/bureaus/bureaus.routes.js';
 import usersRoutes from './modules/users/users.routes.js';
@@ -50,6 +51,7 @@ export function createApp() {
 
   // Base API routes (Dev A)
   app.use('/api/auth', authRoutes);
+  app.use('/api/student', studentRoutes);
   app.use('/api/bureaus', bureausRoutes);
   app.use('/api/users', usersRoutes);
   app.use('/api/cases', casesRoutes);

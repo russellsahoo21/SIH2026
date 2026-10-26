@@ -7,7 +7,8 @@ export async function generateReport(type, filters, user) {
   await runEscalations();
 
   const scopedFilters = { ...filters };
-  if (user && user.role === 'HEAD') {
+  if (user && ['OFFICER', 'HEAD'].includes(user.role)) {
+    if (!user.bureau) throw new ApiError(403, 'FORBIDDEN', 'A bureau assignment is required for staff reports');
     scopedFilters.bureau = user.bureau;
   }
 
@@ -21,7 +22,7 @@ export async function generateReport(type, filters, user) {
     case 'ageing':
       return await reportsRepo.getAgeingReport(scopedFilters);
     case 'overlaps':
-      return await reportsRepo.getOverlapsReport();
+      return await reportsRepo.getOverlapsReport(scopedFilters);
     default:
       throw new ApiError(400, 'VALIDATION_FAILED', `Unknown report type: ${type}`);
   }

@@ -17,6 +17,9 @@ export function authenticate(req, res, next) {
     if (!req.user.id && req.user.sub) {
       req.user.id = Number(req.user.sub);
     }
+    if (['STUDENT', 'COLLEGE'].includes(payload.role) && !['/api/student', '/api/auth'].includes(req.baseUrl)) {
+      return next(new ApiError(403, 'FORBIDDEN', 'Public accounts can only access their own complaint portal'));
+    }
     next();
   } catch (err) {
     return next(new ApiError(401, 'UNAUTHENTICATED', 'Session expired, please log in again'));

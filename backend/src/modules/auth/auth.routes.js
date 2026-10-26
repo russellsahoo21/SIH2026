@@ -23,7 +23,7 @@ const loginLimiter = rateLimit({
 router.post('/login', loginLimiter, validate({ body: loginSchema }), login);
 
 // POST /api/auth/register (public sign up)
-router.post('/register', validate({ body: registerSchema }), register);
+router.post('/register', loginLimiter, validate({ body: registerSchema }), register);
 
 // GET /api/auth/me
 router.get('/me', authenticate, me);

@@ -1,8 +1,25 @@
+import { useLanguage } from '../i18n/Language';
 import React, { useState } from 'react';
-import { Landmark, Bell, User, ChevronDown, LogOut, Search, Volume2 } from 'lucide-react';
-import { getActiveBackend, setActiveBackend } from '../services/api';
+import { Bell, User, ChevronDown, LogOut, Search, Volume2 } from 'lucide-react';
+import { api, apiRequest, getActiveBackend, setActiveBackend } from '../services/api';
 
-export default function Header({ user, onLogout, onTabChange, activeTab, onBackendChange }) {
+export default function Header({ user, onLogout, onTabChange, activeTab, onBackendChange, onViewCase }) {
+ const { t, language, setLanguage } = useLanguage();
+  const announcements = [
+    'New: Revised guidelines for AICTE complaint monitoring and multi-bureau overlap detection now active.',
+    'All officers are advised to regularly update the status of complaints before monthly SLA cutoff.',
+    'Institutions under high overlap review flagged for cross-verification.'
+  ];
+  const [showNotifications,setShowNotifications]=useState(false);
+  const [notifications,setNotifications]=useState([]);
+  const [notificationError,setNotificationError]=useState('');
+  const [loadingNotifications,setLoadingNotifications]=useState(false);
+  async function toggleNotifications(){
+    setShowNotifications(!showNotifications);
+    if(showNotifications)return;
+    setLoadingNotifications(true);setNotificationError('');
+    try{const r=['STUDENT','COLLEGE'].includes(user.role)?await apiRequest('/student/cases'):await api.getCases({bureau:user.bureau || undefined,overdue:'true',pageSize:5});setNotifications(r.data || []);}catch(e){setNotificationError(e.message);}finally{setLoadingNotifications(false);}
+  }
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [fontSize, setFontSize] = useState('normal'); // 'small', 'normal', 'large'
   const [backendMode, setBackendMode] = useState(getActiveBackend());
@@ -28,7 +45,7 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
       {/* 2. Top Accessibility & Language Bar */}
       <div className="gov-accessibility-bar">
         <div>
-          <a href="#main-content" style={{ marginRight: '16px' }}>Skip to main content</a>
+          <a href="#main-content" style={{ marginRight: '16px' }}>{t("Skip to main content")}</a>
           <span style={{ color: '#CBD5E1' }}>|</span>
           <span style={{ marginLeft: '16px' }}>AICTE Portal Standard v2.4</span>
         </div>
@@ -62,24 +79,21 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
             </select>
           </div>
           <span style={{ color: '#CBD5E1' }}>|</span>
-          <span className="lang-switch">English | <span style={{ cursor: 'pointer', color: '#64748B' }}>हिंदी</span></span>
+          <span className="lang-switch"><button type="button" lang="en" aria-pressed={language==='en'} onClick={()=>setLanguage('en')}>English</button><span aria-hidden="true"> | </span><button type="button" lang="hi" aria-pressed={language==='hi'} onClick={()=>setLanguage('hi')}>हिंदी</button></span>
         </div>
       </div>
 
       {/* 3. Main Brand & Emblem Bar */}
       <div className="gov-header">
         <div className="gov-brand">
-          <div className="gov-logo-badge">
-            <Landmark size={22} color="#0A3663" />
-            <span>AICTE</span>
-          </div>
+          <img className="portal-brand-logo" src="/assets/portal-mark.png" alt="AICTE Grievance Portal" width="48" height="48" />
 
           <div className="gov-title-group">
-            <h1>Integrated Complaint Monitoring Dashboard</h1>
+            <h1>{t("Integrated Complaint Monitoring Dashboard")}</h1>
             <p>
-              {user?.role === 'MANAGEMENT' ? 'Senior Management Dashboard' : 
-               user?.role === 'COORDINATOR' ? 'Cross-Bureau Coordination Portal' :
-               user ? `Officer Portal (${user.bureau || 'General Bureau'})` : 'Officer Portal'}
+              {user?.role === 'COLLEGE' ? t("College Grievance Portal") : user?.role === 'STUDENT' ? t("Student Grievance Portal") : user?.role === 'MANAGEMENT' ? t("Senior Management Dashboard") :
+               user?.role === 'COORDINATOR' ? t("Cross-Bureau Coordination Portal") :
+               user ? `Officer Portal (${user.bureau || 'General Bureau'})` : t("Officer Portal")}
             </p>
           </div>
         </div>
@@ -90,21 +104,22 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
             <div>
               <div className="emblem-text">
                 भारत सरकार
-                <span>Government of India</span>
+                <span>{t("Government of India")}</span>
               </div>
             </div>
-            <div className="emblem-icon">🏛️</div>
+            <span className="design-emblem" role="img" aria-label="Emblem from the supplied portal design" />
           </div>
 
           {user && (
             <div className="user-quick-profile">
-              <button className="noti-btn" title="System Notifications">
+              <div style={{position:"relative"}}><button className="noti-btn" title="Notifications" aria-label="Notifications" aria-expanded={showNotifications} onClick={toggleNotifications}>
                 <Bell size={18} />
-                <span className="noti-badge" />
-              </button>
 
+              </button>
+              {showNotifications&&<section className="notification-panel" aria-label="Notifications"><h3>{['STUDENT','COLLEGE'].includes(user.role)?t("Complaint updates"):t("Overdue case alerts")}</h3><p>{t("Refreshes when opened.")}</p>{loadingNotifications?<p>{t("Loading…")}</p>:notificationError?<p role="alert">{notificationError}</p>:notifications.length===0?<p>{t("No alerts at present.")}</p>:notifications.map(c=>['STUDENT','COLLEGE'].includes(user.role)?<p key={c.id}>{c.id} · {c.status}</p>:<button key={c.id} onClick={()=>{setShowNotifications(false);onViewCase(c.id);}}>{c.id}<br/>{c.institutionName} · {c.status}</button>)}<button onClick={()=>setShowNotifications(false)}>{t("Close")}</button></section>}
+              </div>
               <div style={{ position: 'relative' }}>
-                <div 
+                <div
                   className="user-menu-pill"
                   onClick={() => setShowUserDropdown(!showUserDropdown)}
                 >
@@ -153,7 +168,7 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
                         cursor: 'pointer'
                       }}
                     >
-                      <LogOut size={14} /> Logout
+                      <LogOut size={14} /> {t("Logout")}
                     </button>
                   </div>
                 )}
@@ -164,48 +179,51 @@ export default function Header({ user, onLogout, onTabChange, activeTab, onBacke
       </div>
 
       {/* 4. Sub-Navigation Horizontal Bar (As in Slide 2 & 3) */}
-      <div className="sub-nav-bar">
-        <div 
+      {user && !['STUDENT','COLLEGE'].includes(user.role) && <div className="sub-nav-bar">
+        <div
           className={`sub-nav-item ${activeTab === 'home' ? 'active' : ''}`}
           onClick={() => onTabChange('home')}
         >
-          Home
+          {t("Home")}
         </div>
-        <div 
+        <div
           className={`sub-nav-item ${activeTab === 'dashboards' ? 'active' : ''}`}
           onClick={() => onTabChange('dashboards')}
         >
-          Senior Management Dashboard
+          {t("Senior Management Dashboard")}
         </div>
-        <div 
+        <div
           className={`sub-nav-item ${activeTab === 'overlaps' ? 'active' : ''}`}
           onClick={() => onTabChange('overlaps')}
         >
-          Overlap Coordination
+          {t("Overlap Coordination")}
         </div>
-        <div 
+        <div
           className={`sub-nav-item ${activeTab === 'institutions' ? 'active' : ''}`}
           onClick={() => onTabChange('institutions')}
         >
-          Institutions Master
+          {t("Institutions Master")}
         </div>
-        <div 
+        <div
           className={`sub-nav-item ${activeTab === 'reports' ? 'active' : ''}`}
           onClick={() => onTabChange('reports')}
         >
-          Reports & Analytics
+          {t("Reports & Analytics")}
         </div>
       </div>
 
+      }
       {/* 5. Announcements / News Ticker */}
       <div className="gov-announcement-bar">
         <div className="announcement-badge">
-          <Volume2 size={15} /> Announcements
+          <Volume2 size={15} /> {t("Announcements")}
         </div>
-        <div className="announcement-ticker">
-          <span>New: Revised guidelines for AICTE complaint monitoring and multi-bureau overlap detection now active.</span>
-          <span>All officers are advised to regularly update the status of complaints before monthly SLA cutoff.</span>
-          <span>Institutions under high overlap review flagged for cross-verification.</span>
+        <div className="announcement-ticker" tabIndex={0} role="region" aria-label="Announcements. Hover or focus to pause scrolling.">
+          <div className="announcement-track">
+            {[0, 1].map(copy => <div className="announcement-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+              {announcements.map(message => <span key={message}>{t(message)}</span>)}
+            </div>)}
+          </div>
         </div>
       </div>
     </header>

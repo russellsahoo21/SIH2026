@@ -2,7 +2,7 @@
 const RENDER_BACKEND_URL = 'https://sih2026-17zc.onrender.com';
 
 export function getActiveBackend() {
-  return localStorage.getItem('aicte_backend_mode') || 'render'; // default to live render or 'local'
+  return localStorage.getItem('aicte_backend_mode') || (import.meta.env.DEV ? 'local' : 'render'); // default to live render or 'local'
 }
 
 export function setActiveBackend(mode) {
@@ -26,7 +26,7 @@ export function getAuthToken() {
 
 export function getCurrentUser() {
   const user = localStorage.getItem('aicte_user');
-  return user ? JSON.parse(user) : null;
+  try { return user ? JSON.parse(user) : null; } catch { clearAuth(); return null; }
 }
 
 export function setAuth(token, user) {
@@ -138,6 +138,7 @@ export const api = {
     body: JSON.stringify(payload)
   }),
 
+  reopenCase: (id, payload) => apiRequest(`/cases/${encodeURIComponent(id)}/reopen`, {method:'POST',body:JSON.stringify(payload)}),
   // AI & Matching
   suggest: (payload) => apiRequest('/suggest', {
     method: 'POST',

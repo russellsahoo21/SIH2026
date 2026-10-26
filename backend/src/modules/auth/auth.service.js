@@ -22,8 +22,8 @@ export async function register(data) {
     username: data.username,
     fullName: data.fullName,
     passwordHash,
-    role: data.role || 'OFFICER',
-    bureauCode: data.bureauCode || null,
+    role: data.role === 'COLLEGE' ? 'COLLEGE' : 'STUDENT',
+    bureauCode: null,
     region: data.region || null
   });
 
