@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { api, getFullApiUrl } from '../services/api';
+import { api, downloadReport } from '../services/api';
 import { FileSpreadsheet, Download } from 'lucide-react';
 
 export default function ReportsView() {
@@ -21,8 +21,9 @@ export default function ReportsView() {
     }
   };
 
-  const handleDownloadExcel = () => {
-    window.open(getFullApiUrl(`/reports/${reportType}?format=xlsx`), '_blank');
+  const handleDownloadExcel = async () => {
+    setError('');
+    try { await downloadReport(reportType); } catch(err) { setError(err.message); }
   };
 
   return (

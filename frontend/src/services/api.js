@@ -184,3 +184,9 @@ export const api = {
     return apiRequest(`/reports/${type}?${q}`);
   }
 };
+
+export async function downloadReport(type) {
+ const response=await fetch(getFullApiUrl('/reports/'+encodeURIComponent(type)+'?format=xlsx'),{headers:{Authorization:'Bearer '+getAuthToken()}});
+ if(!response.ok){const result=await response.json().catch(()=>null);throw new Error(result?.error?.message || 'Report download failed');}
+ const url=URL.createObjectURL(await response.blob());const link=document.createElement('a');link.href=url;link.download='aicte-report-'+type+'.xlsx';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}

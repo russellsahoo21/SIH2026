@@ -1,6 +1,7 @@
 import { useLanguage } from '../i18n/Language';
 import React, { useState, useEffect } from 'react';
-import { api, getFullApiUrl } from '../services/api';
+import { monthlyRows } from '../services/viewData';
+import { api, downloadReport } from '../services/api';
 import { 
   BarChart3, TrendingUp, AlertOctagon, Download, 
   MapPin, CheckCircle, Clock 
@@ -13,12 +14,13 @@ export default function ManagementDashboard({ onViewCase }) {
   const [topOverdue, setTopOverdue] = useState([]);
   const [monthlyDisposal, setMonthlyDisposal] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState('All India');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [nowTimestamp] = useState(() => Date.now());
 
   useEffect(() => {
     async function loadDashboard() {
-      setLoading(true);
+      setLoading(true);setError('');
       try {
         const regionParam = selectedRegion !== 'All India' ? { region: selectedRegion } : {};
         const [sumRes, workRes, , overdueRes, , dispRes] = await Promise.all([
@@ -33,9 +35,9 @@ export default function ManagementDashboard({ onViewCase }) {
         setSummary(sumRes.data);
         setWorkload(workRes.data);
         setTopOverdue(overdueRes.data || []);
-        setMonthlyDisposal(dispRes.data || []);
+        setMonthlyDisposal(monthlyRows(dispRes.data));
       } catch (err) {
-        console.error('Failed to load senior management dashboard from DB:', err);
+        setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -45,9 +47,9 @@ export default function ManagementDashboard({ onViewCase }) {
 
   const handleExport = async () => {
     try {
-      window.open(getFullApiUrl('/reports/bureau-wise?format=xlsx'), '_blank');
-    } catch {
-      alert('Report download initiated.');
+      await downloadReport('bureau-wise');
+    } catch (err) {
+      setError(err.message);
     }
   };
 
@@ -68,7 +70,7 @@ export default function ManagementDashboard({ onViewCase }) {
     disposalMap[d.month] = d.count;
   });
 
-  const recentMonths = [8, 9, 10, 11, 12, 1].map(m => ({
+  const recentMonths = Array.from({length: 12}, (_, i) => i + 1).map(m => ({
     m: monthNames[m - 1],
     c: disposalMap[m] || 0
   }));
@@ -76,6 +78,7 @@ export default function ManagementDashboard({ onViewCase }) {
 
   return (
     <div>
+      {error && <p role="alert" className="portal-error">{error}</p>}
       {/* Breadcrumb & Header Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <div>

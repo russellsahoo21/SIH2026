@@ -1,49 +1,71 @@
 import { useLanguage } from '../i18n/Language';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { linkedCaseIds } from '../services/viewData';
 import { api } from '../services/api';
 import { GitMerge, Link2 } from 'lucide-react';
 
-export default function OverlapsView({ onViewCase }) {
+export default function OverlapsView({ onViewCase, user }) {
  const { t } = useLanguage();
   const [overlaps, setOverlaps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedOverlap, setSelectedOverlap] = useState(null);
   const [leadBureau, setLeadBureau] = useState('PGRC');
   const [coordinationNotes, setCoordinationNotes] = useState('');
+  const selectionRequest = useRef(0);
+  const [detailLoading, setDetailLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
+  const canCoordinate = ['COORDINATOR','ADMIN'].includes(user?.role);
+  const selectOverlap = useCallback(async (group) => {
+    const requestId = ++selectionRequest.current;
+    setSelectedOverlap(null);setDetailLoading(true);setError('');setNotice('');
+    try {
+      const res = await api.getOverlap(group.id);
+      if(requestId !== selectionRequest.current) return;
+      setSelectedOverlap(res.data);
+      setLeadBureau(res.data.leadBureau || res.data.suggestedLeadBureau || 'PGRC');
+      setCoordinationNotes(res.data.notes || '');
+    } catch(err) { if(requestId === selectionRequest.current) setError(err.message); }
+    finally { if(requestId === selectionRequest.current) setDetailLoading(false); }
+  }, []);
   const [linking, setLinking] = useState(false);
 
   const loadOverlaps = useCallback(async () => {
     setLoading(true);
     try {
       const res = await api.getOverlaps();
-      const list = res.data || [];
-      setOverlaps(list);
-      setSelectedOverlap(prev => (prev || (list.length > 0 ? list[0] : null)));
+      setOverlaps(res.data || []);
+      if (res.data?.length > 0) {
+        await selectOverlap(res.data[0]);
+      }
     } catch (err) {
-      console.error('Failed to load overlap alerts:', err);
+      setError(err.message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [selectOverlap]);
 
   useEffect(() => {
     loadOverlaps();
   }, [loadOverlaps]);
 
   const handleLinkGroup = async () => {
-    if (!selectedOverlap) return;
+    if (!selectedOverlap || !canCoordinate) return;
+    const caseIds = linkedCaseIds(selectedOverlap);
+    if (!caseIds.length) { setError('No related member cases are available to link.'); return; }
+    setError('');setNotice('');
     setLinking(true);
     try {
-      const caseIds = selectedOverlap.members ? selectedOverlap.members.map(m => m.caseId) : [];
-      await api.linkOverlap(selectedOverlap.id, {
+      const result = await api.linkOverlap(selectedOverlap.id, {
         caseIds,
         leadBureau,
         notes: coordinationNotes || 'Linked under coordinated multi-bureau review.'
       });
-      alert('Overlap group linked successfully!');
-      loadOverlaps();
+      setSelectedOverlap(result.data);
+      setNotice('Overlap group linked successfully.');
+      setOverlaps(items=>items.map(item=>item.id===result.data.id?{...item,...result.data}:item));
     } catch (err) {
-      alert('Failed to link group: ' + err.message);
+      setError('Failed to link group: ' + err.message);
     } finally {
       setLinking(false);
     }
@@ -85,7 +107,7 @@ export default function OverlapsView({ onViewCase }) {
               overlaps.map(o => (
                 <div
                   key={o.id}
-                  onClick={() => setSelectedOverlap(o)}
+                  onClick={() => { if(!linking) selectOverlap(o); }}
                   style={{
                     padding: '14px 18px',
                     borderBottom: '1px solid #F1F5F9',
@@ -126,7 +148,9 @@ export default function OverlapsView({ onViewCase }) {
 
         {/* Right: Overlap Coordination Workspace */}
         <div className="gov-table-card" style={{ padding: '20px' }}>
-          {selectedOverlap ? (
+          {error && <p role="alert" className="portal-error">{error}</p>}
+          {notice && <p role="status">{notice}</p>}
+          {detailLoading ? <p>Loading member cases…</p> : selectedOverlap ? (
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
                 <div>
@@ -165,7 +189,7 @@ export default function OverlapsView({ onViewCase }) {
                           {m.caseId}
                         </span>
                         <span style={{ fontSize: '12px', color: '#64748B', marginLeft: '12px' }}>
-                          Similarity: <strong>{Math.round((m.similarity || 0.85) * 100)}%</strong>
+                          Similarity: <strong>{Math.round((m.similarity ?? 0) * 100)}%</strong>
                         </span>
                         <span style={{ fontSize: '11px', background: '#E2E8F0', padding: '2px 6px', borderRadius: '4px', marginLeft: '8px' }}>
                           {m.memberState || 'DETECTED'}
@@ -221,7 +245,7 @@ export default function OverlapsView({ onViewCase }) {
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
                   <button
-                    disabled={linking}
+                    disabled={linking || !canCoordinate || !linkedCaseIds(selectedOverlap).length}
                     onClick={handleLinkGroup}
                     className="gov-btn gov-btn-primary"
                   >
